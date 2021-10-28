@@ -6,22 +6,34 @@ import javax.swing.text.Document;
 import editor.TextEditor;
 
 public class RecordListener implements DocumentListener{
+
+    TextEditor te;
+
     public RecordListener(TextEditor te) {
         te.getTextArea().getDocument().addDocumentListener(this);
     }
-    @Override    public void insertUpdate(DocumentEvent e) {
+
+    @Override
+    public void insertUpdate(DocumentEvent e) {
         this.toRecord(e);
     }
-    @Override    public void removeUpdate(DocumentEvent e) {
+
+    @Override
+    public void removeUpdate(DocumentEvent e) {
         this.toRecord(e);
     }
-    @Override    public void changedUpdate(DocumentEvent e) {
+
+    @Override
+    public void changedUpdate(DocumentEvent e) {
         this.toRecord(e);
     }
+
     public void toRecord(DocumentEvent e) {
         Document doc = (Document)e.getDocument();
         try {
-            System.out.println( doc.getText(0, doc.getLength()) );
+            this.te.getFileContollor().editing();
+            String text = doc.getText(0, doc.getLength());
+            System.out.println( text );
         } catch (BadLocationException e1) {
             // TODO Auto-generated catch block            e1.printStackTrace();
         }

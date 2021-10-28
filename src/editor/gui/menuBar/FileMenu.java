@@ -27,7 +27,13 @@ public class FileMenu extends JMenu {
                     // ....
                 }
             });
-        JMenuItem saveMenuItem = new JMenuItem("Save");
+        JMenuItem saveMenuItem = new JMenuItem(
+            new AbstractAction("Save"){
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    textEditor.getFileContollor().save();
+                }
+            });
         this.add(newMenuItem);
         this.add(newWindowMenuItem);
         this.add(openMenuItem);

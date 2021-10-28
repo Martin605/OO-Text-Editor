@@ -4,6 +4,7 @@ import javax.swing.*;
 
 import editor.gui.menuBar.MenuBar;
 import editor.record.RecordController;
+import editor.file.FileContollor;
 import editor.gui.body.TextArea;
 
 import java.awt.*;
@@ -12,11 +13,13 @@ public class TextEditor extends JFrame {
 
     private JFrame frame;
     private JTextArea text_area;
+    private FileContollor fileContollor;
 
     public TextEditor() {
         new EditorGroup().addWindow(this);
         frame = new JFrame("Editor");
         text_area = new TextArea();
+        fileContollor = new FileContollor();
         Container contentPane = getContentPane();
         JMenuBar menu_bar = new MenuBar(this);
         JScrollPane scroll_pane = new JScrollPane(
@@ -25,7 +28,7 @@ public class TextEditor extends JFrame {
             ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER
         );  
 
-        RecordController test = new RecordController(this);
+        new RecordController(this);
         frame.setJMenuBar(menu_bar);
         contentPane.add(scroll_pane,BorderLayout.CENTER);
         frame.add(text_area);
@@ -48,6 +51,10 @@ public class TextEditor extends JFrame {
 
     public JTextArea getTextArea() {
         return this.text_area;
+    }
+
+    public FileContollor getFileContollor() {
+        return this.fileContollor;
     }
 
 }
