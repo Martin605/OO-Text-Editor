@@ -1,4 +1,4 @@
-package editor.gui;
+package editor.gui.menuBar;
 
 import java.awt.event.ActionEvent;
 import javax.swing.*;

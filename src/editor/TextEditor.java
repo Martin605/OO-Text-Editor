@@ -1,8 +1,11 @@
 package editor;
 
 import javax.swing.*;
+
+import editor.gui.menuBar.MenuBar;
+import editor.gui.body.TextArea;
+
 import java.awt.*;
-import editor.gui.MenuBar;
 
 public class TextEditor extends JFrame {
 
@@ -11,12 +14,18 @@ public class TextEditor extends JFrame {
 
     TextEditor() {
         frame = new JFrame("Editor");
-        text_area = new JTextArea();
-        JMenuBar menu_bar = MenuBar.init(this);
+        text_area = new TextArea();
+
+        JMenuBar menu_bar = new MenuBar(this);
+        JScrollPane scroll_pane = new JScrollPane(text_area);  
+        JPanel panel = new JPanel(null);
+        
+
         frame.setJMenuBar(menu_bar);
+        panel.add(scroll_pane);
         frame.add(text_area);
         frame.setSize(900, 600);
-        frame.show();
+        frame.setVisible(true);
     }
 
     public void setTheme(Color background, Color foreground) {
@@ -26,6 +35,10 @@ public class TextEditor extends JFrame {
 
     public JFrame getFrame() {
         return this.frame;
+    }
+
+    public String getText() {
+        return this.text_area.getText();
     }
 
 }

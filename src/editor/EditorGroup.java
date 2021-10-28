@@ -13,7 +13,6 @@ public class EditorGroup{
     }
 
     public void addWindow(TextEditor textEditor){
-        System.out.println(textEditor);
         EditorGroupList.add(textEditor);
     };
 

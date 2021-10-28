@@ -1,4 +1,4 @@
-package editor.gui;
+package editor.gui.menuBar;
 
 import javax.swing.*;
 
