@@ -1,9 +1,13 @@
+package editor;
+
 import javax.swing.*;
 import java.awt.*;
+import editor.gui.MenuBar;
 
-class TextEditor extends JFrame {
-    JTextArea text_area;
-    JFrame frame;
+public class TextEditor extends JFrame {
+
+    private JFrame frame;
+    private JTextArea text_area;
 
     TextEditor() {
         frame = new JFrame("Editor");
@@ -20,8 +24,8 @@ class TextEditor extends JFrame {
         text_area.setForeground(foreground);
     }
 
-    // public static void main(String args[]){
-    //     Windows windows = new Windows();
-    //     windows.NewEditor();
-    // }
+    public JFrame getFrame() {
+        return this.frame;
+    }
+
 }

@@ -1,6 +1,10 @@
+package editor.gui;
+
 import javax.swing.*;
 
-import java.awt.Color;
+import editor.EditorGroup;
+import editor.TextEditor;
+
 import java.awt.event.ActionEvent;
 
 
@@ -22,7 +26,7 @@ public class MenuBar {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         JFileChooser chooser = new JFileChooser(".");
-                        chooser.showOpenDialog(textEditor.frame);
+                        chooser.showOpenDialog(textEditor.getFrame());
                         // ....
                     }
                 });
