@@ -21,6 +21,7 @@ public class TextEditor extends JFrame {
         frame = new JFrame("Editor");
         text_area = new TextArea();
         fileContollor = new FileContollor();
+        fileContollor.setFileInfo(this, "", "");
         JMenuBar menu_bar = new MenuBar(this);
         JScrollPane scroll_pane = new JScrollPane(
             text_area,
@@ -35,6 +36,7 @@ public class TextEditor extends JFrame {
         frame.add(text_area);
         frame.setSize(900, 600);
         frame.setVisible(true);
+
     }
 
     public void setTheme(Color background, Color foreground) {

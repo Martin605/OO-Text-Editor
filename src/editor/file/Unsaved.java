@@ -2,8 +2,8 @@ package editor.file;
 
 class Unsaved extends FileState {
     void save(FileContollor f) {
-        //save action
-        System.out.println("save action");
+        new FileAction().save(f.get_TE());
+        System.out.println("Save");
         f.setState(new Saved());
     };
     void run(FileContollor f) {

@@ -1,17 +1,21 @@
 package editor.file;
 
+import editor.TextEditor;
+
 // State Patten
 public class FileContollor {
 
     private String filename;
     private String path;
+    private TextEditor textEditor;
     private FileState state;
 
     public FileContollor() {
         this.state = new Unsaved();
     }
 
-    public void setFileInfo(String filename, String path) {
+    public void setFileInfo(TextEditor textEditor, String filename, String path) {
+        this.textEditor = textEditor;
         this.filename = filename;
         this.path = path;
     }
@@ -38,6 +42,14 @@ public class FileContollor {
 
     public String get_name() {
         return this.filename;
+    }
+
+    public String get_path() {
+        return this.path;
+    }
+
+    public TextEditor get_TE() {
+        return this.textEditor;
     }
 
 }

@@ -1,17 +1,19 @@
 package editor.gui.menuBar;
 
+import java.util.ArrayList;
 import javax.swing.*;
 import editor.TextEditor;
 
 public class MenuBar extends JMenuBar {
     public MenuBar(TextEditor textEditor) {
-        JMenu fileMenu = new FileMenu(textEditor);
-        JMenu editMenu = new EditMenu(textEditor);
-        JMenu ThemeMenu = new ThemeMenu();
-        JMenu t = new TestMenu(textEditor);
-        this.add(fileMenu);
-        this.add(editMenu);
-        this.add(ThemeMenu);
-        this.add(t);
+        ArrayList<JMenu> menu = new ArrayList<JMenu>();
+        menu.add(new FileMenu(textEditor));
+        menu.add(new EditMenu(textEditor));
+        menu.add(new ThemeMenu(textEditor));
+        menu.add(new TestMenu(textEditor));
+        menu.add(new CloseMenu(textEditor));
+        for (JMenu i : menu ) {
+            this.add(i);
+        }
     }
 }
