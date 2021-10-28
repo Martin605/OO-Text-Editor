@@ -8,11 +8,11 @@ import editor.TextEditor;
 public class TestMenu extends JMenu {
 
     TextEditor textEditor;
-
+    RecordCaretaker careTaker = new RecordCaretaker();
     TestMenu(TextEditor textEditor) {
-        super("Test");
+        super("Undo");
         JMenuItem lightMenuItem = new JMenuItem(
-            new AbstractAction("Test"){
+            new AbstractAction("Undo"){
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     System.out.println(textEditor.getText());

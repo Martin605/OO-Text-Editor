@@ -8,6 +8,8 @@ import editor.TextEditor;
 public class RecordListener implements DocumentListener{
 
     TextEditor te;
+    RecordCaretaker careTaker = new RecordCaretaker();
+    RecordEdits recordedits = new RecordEdits();
 
     public RecordListener(TextEditor te) {
         te.getTextArea().getDocument().addDocumentListener(this);
@@ -33,7 +35,9 @@ public class RecordListener implements DocumentListener{
         try {
             this.te.getFileContollor().editing();
             String text = doc.getText(0, doc.getLength());
-            System.out.println( text );
+            recordedits.addEdits(new Edit(text));
+            careTaker.setMemento(recordedits);
+            System.out.println(recordedits);
         } catch (BadLocationException e1) {
             // TODO Auto-generated catch block            e1.printStackTrace();
         }
