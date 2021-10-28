@@ -3,6 +3,7 @@ package editor;
 import javax.swing.*;
 
 import editor.gui.menuBar.MenuBar;
+import editor.record.RecordController;
 import editor.gui.body.TextArea;
 
 import java.awt.*;
@@ -20,7 +21,7 @@ public class TextEditor extends JFrame {
         JScrollPane scroll_pane = new JScrollPane(text_area);  
         JPanel panel = new JPanel(null);
         
-
+        RecordController test = new RecordController(this);
         frame.setJMenuBar(menu_bar);
         panel.add(scroll_pane);
         frame.add(text_area);
