@@ -14,7 +14,7 @@ public class MenuBar {
                 new AbstractAction("New Window"){
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        new Windows().NewEditor();
+                        new EditorGroup().CreateEditor();
                     }
                 });
             JMenuItem openMenuItem = new JMenuItem(
@@ -31,7 +31,7 @@ public class MenuBar {
                     new AbstractAction("Theme"){
                         @Override
                         public void actionPerformed(ActionEvent e) {
-                            new Windows().setTheme();
+                            new EditorGroup().setTheme();
                             // textEditor.setTheme(
                             //         new Color(61, 61, 61),
                             //         new Color(255, 255, 255)
