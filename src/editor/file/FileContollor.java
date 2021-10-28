@@ -1,5 +1,6 @@
 package editor.file;
 
+// State Patten
 public class FileContollor {
 
     private String filename;
@@ -10,8 +11,9 @@ public class FileContollor {
         this.state = new Unsaved();
     }
 
-    public void rename(String filename) {
+    public void setFileInfo(String filename, String path) {
         this.filename = filename;
+        this.path = path;
     }
 
     public FileState getState() {

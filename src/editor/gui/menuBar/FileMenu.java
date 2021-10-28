@@ -24,7 +24,7 @@ public class FileMenu extends JMenu {
                 public void actionPerformed(ActionEvent e) {
                     JFileChooser chooser = new JFileChooser(".");
                     chooser.showOpenDialog(textEditor.getFrame());
-                    // ....
+                    textEditor.getTextArea().setText("");
                 }
             });
         JMenuItem saveMenuItem = new JMenuItem(

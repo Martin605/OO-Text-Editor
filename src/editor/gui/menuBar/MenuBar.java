@@ -6,7 +6,7 @@ import editor.TextEditor;
 public class MenuBar extends JMenuBar {
     public MenuBar(TextEditor textEditor) {
         JMenu fileMenu = new FileMenu(textEditor);
-        JMenu editMenu = new EditMenu();
+        JMenu editMenu = new EditMenu(textEditor);
         JMenu ThemeMenu = new ThemeMenu();
         JMenu t = new TestMenu(textEditor);
         this.add(fileMenu);

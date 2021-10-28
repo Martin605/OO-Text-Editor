@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.*;
 
 import editor.TextEditor;
+import editor.record.RecordCaretaker;
 
 public class TestMenu extends JMenu {
 
