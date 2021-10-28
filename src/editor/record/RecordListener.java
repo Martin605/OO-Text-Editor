@@ -12,6 +12,7 @@ public class RecordListener implements DocumentListener{
     RecordEdits recordedits = new RecordEdits();
 
     public RecordListener(TextEditor te) {
+        this.te = te;
         te.getTextArea().getDocument().addDocumentListener(this);
     }
 
