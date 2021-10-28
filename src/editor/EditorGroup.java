@@ -21,9 +21,9 @@ public class EditorGroup{
         EditorGroupList.remove(textEditor);
     }
 
-    public void setTheme() {
+    public void setTheme(Color background, Color foreground) {
         for (TextEditor textEditor : EditorGroupList) {
-            textEditor.setTheme(Color.GREEN, Color.RED);
+            textEditor.setTheme(background, foreground);
         }
     };
 
