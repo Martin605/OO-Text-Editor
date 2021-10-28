@@ -5,9 +5,7 @@ public class RecordController {
     public RecordController(TextEditor texteditor){
         RecordCaretaker careTaker = new RecordCaretaker();
         RecordEdits recordedits = new RecordEdits();
-
-
-        recordedits.addEdits(new Edit(texteditor.getText()));
+        recordedits.addEdits(new Edit("a=1"));
 
         recordedits.addEdits(new Edit("b=2"));
 

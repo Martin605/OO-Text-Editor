@@ -6,6 +6,9 @@ import javax.swing.text.Document;
 import editor.TextEditor;
 
 public class RecordListener implements DocumentListener{
+    RecordCaretaker careTaker = new RecordCaretaker();
+    RecordEdits recordedits = new RecordEdits();
+
     public RecordListener(TextEditor te) {
         te.getTextArea().getDocument().addDocumentListener(this);
     }
@@ -21,7 +24,9 @@ public class RecordListener implements DocumentListener{
     public void toRecord(DocumentEvent e) {
         Document doc = (Document)e.getDocument();
         try {
-            System.out.println( doc.getText(0, doc.getLength()) );
+            recordedits.addEdits(new Edit(doc.getText(0, doc.getLength())));
+            careTaker.setMemento(recordedits);
+            System.out.println(recordedits);
         } catch (BadLocationException e1) {
             // TODO Auto-generated catch block            e1.printStackTrace();
         }
