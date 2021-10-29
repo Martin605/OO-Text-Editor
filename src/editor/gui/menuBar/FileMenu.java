@@ -20,7 +20,7 @@ public class FileMenu extends MenuItem {
                 new AbstractAction("New Window"){
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        new EditorGroup().CreateEditor();
+                        new EditorGroup().createEditor();
                     }
                 }
             )

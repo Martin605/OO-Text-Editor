@@ -5,8 +5,7 @@ import javax.swing.*;
 
 import editor.TextEditor;
 import editor.setting.ThemeEditor;
-import editor.setting.theme.Light;
-import editor.setting.theme.Dark;
+import editor.setting.theme.*;
 
 public class ThemeMenu extends MenuItem {
 
@@ -35,6 +34,37 @@ public class ThemeMenu extends MenuItem {
                 }
             )
         );
+        this.menuItem.add( 
+            new JMenuItem(
+                new AbstractAction("Light Gray"){
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        themeEditor.ChoiceTheme(new LightGray());
+                    }
+                }
+            )
+        );
+        this.menuItem.add( 
+            new JMenuItem(
+                new AbstractAction("Dark Gray"){
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        themeEditor.ChoiceTheme(new DarkGray());
+                    }
+                }
+            )
+        );
+        this.menuItem.add( 
+            new JMenuItem(
+                new AbstractAction("BlueDark"){
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        themeEditor.ChoiceTheme(new BlueDark());
+                    }
+                }
+            )
+        );
+
         this.addToThis();
     }
 }

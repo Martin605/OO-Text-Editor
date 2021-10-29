@@ -15,11 +15,11 @@ public class EditorGroup{
         return uniqueEditorGroup;
     }
 
-    public void addWindow(TextEditor textEditor){
+    public void addEditor(TextEditor textEditor){
         editorGroupList.add(textEditor);
     };
 
-    public void removeWindow(TextEditor textEditor){
+    public void removeEditor(TextEditor textEditor){
         editorGroupList.remove(textEditor);
     }
 
@@ -30,9 +30,8 @@ public class EditorGroup{
         }
     };
 
-    public void CreateEditor() {
-        TextEditor textEditor = new TextEditor();
-        this.addWindow(textEditor);
+    public void createEditor() {
+        new TextEditor();
     }
 
 } 
