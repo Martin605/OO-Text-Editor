@@ -11,6 +11,7 @@ public class RecordController {
 
     public RecordController(TextEditor texteditor){
         this.texteditor = texteditor;
+        this.change("");
     } 
 
     public void change( String str ) {

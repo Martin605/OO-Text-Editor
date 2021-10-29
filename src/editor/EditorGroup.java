@@ -1,7 +1,8 @@
 package editor;
 
-import java.awt.Color;
+import java.awt.*;
 import java.util.ArrayList;
+
 
 
 public class EditorGroup{
@@ -29,6 +30,11 @@ public class EditorGroup{
             textEditor.setTheme(background, foreground);
         }
     };
+    public void setFont(Font font) {
+    	for (TextEditor textEditor : editorGroupList) {
+            textEditor.setFont(font);
+        }
+    }
 
     public void createEditor() {
         new TextEditor();

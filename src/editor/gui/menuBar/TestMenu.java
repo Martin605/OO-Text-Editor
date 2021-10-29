@@ -10,17 +10,7 @@ public class TestMenu extends MenuItem {
 
     TextEditor textEditor;
     TestMenu(TextEditor textEditor) {
-        super("Undo", textEditor);
-        this.menuItem.add(
-            new JMenuItem(
-                new AbstractAction("Undo"){
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        textEditor.getRecordController().restore(); //用戶想要復原
-                    }
-                }
-            )
-        );
+        super("Test", textEditor);
         this.menuItem.add(
             new JMenuItem(
                 new AbstractAction("Test Data"){

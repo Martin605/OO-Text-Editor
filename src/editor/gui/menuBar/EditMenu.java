@@ -10,6 +10,16 @@ public class EditMenu extends MenuItem {
         super("Edit", te);
         this.menuItem.add(
             new JMenuItem(
+                new AbstractAction("Undo"){
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        te.getRecordController().restore(); //用戶想要復原
+                    }
+                }
+            )
+        );
+        this.menuItem.add(
+            new JMenuItem(
                 new AbstractAction("cut"){
                     @Override
                     public void actionPerformed(ActionEvent e) {

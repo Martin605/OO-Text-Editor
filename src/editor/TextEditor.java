@@ -82,6 +82,10 @@ public class TextEditor extends JFrame {
         return this.fileContollor;
     }
 
+    public void setFont(Font font) {
+    	text_area.setFont(font);
+    }
+
     @Override
     public void dispose() {
         editorGroup.removeEditor(this);
