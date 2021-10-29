@@ -13,8 +13,6 @@ public class FileMenu extends MenuItem {
     FileMenu(TextEditor textEditor) {
         super("File", textEditor);
 
-        this.menuItem.add(new JMenuItem("New"));
-
         this.menuItem.add( 
             new JMenuItem(
                 new AbstractAction("New Window"){

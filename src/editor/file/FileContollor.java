@@ -5,13 +5,14 @@ import editor.TextEditor;
 // State Patten
 public class FileContollor {
 
-    private String filename;
-    private String path;
+    private String filename = "";
+    private String path = "";
     private TextEditor textEditor;
     private FileState state;
 
-    public FileContollor() {
-        this.state = new Unsaved();
+    public FileContollor(TextEditor textEditor) {
+        this.textEditor = textEditor;
+        this.state = new Unsaved(textEditor);
     }
 
     public void setFileInfo(TextEditor textEditor, String filename, String path) {
@@ -36,8 +37,12 @@ public class FileContollor {
         state.run(this);
     }
 
+    public void close() {
+        state.close(this);
+    }
+
     public void editing() {
-        this.state = new Unsaved();
+        this.state = new Unsaved(textEditor);
     }
 
     public String get_name() {
@@ -48,7 +53,7 @@ public class FileContollor {
         return this.path;
     }
 
-    public TextEditor get_TE() {
+    public TextEditor get_TextEditor() {
         return this.textEditor;
     }
 

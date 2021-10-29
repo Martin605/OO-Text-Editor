@@ -1,13 +1,22 @@
 package editor.file;
 
+import editor.TextEditor;
+
 class Unsaved extends FileState {
+    Unsaved(TextEditor textEditor) {
+        textEditor.setState("[Unsaved]");
+    }
     void save(FileContollor f) {
-        new FileAction().save(f.get_TE());
-        System.out.println("Save");
-        f.setState(new Saved());
+        if(new FileAction().save(f.get_TextEditor())) {
+            f.setState(new Saved(f));
+        }
     };
     void run(FileContollor f) {
         f.getState().save(f);
         f.getState().run(f);
+    };
+    void close(FileContollor f) {
+        f.getState().save(f);
+        f.getState().close(f);
     };
 }

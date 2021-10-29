@@ -4,10 +4,8 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
 
 import javax.swing.JFileChooser;
 import editor.TextEditor;
@@ -17,25 +15,27 @@ public class FileAction {
     JFileChooser fileChooser = new JFileChooser();
     int fileId;
 
-    public void save(TextEditor textEditor) {
+    public boolean save(TextEditor textEditor) {
         File file = new File(textEditor.getFileContollor().get_path());
         if(file.exists() && !file.isDirectory()) { 
             this.write(file, textEditor.getText());
+            return true;
         } else {
-            this.save_as(textEditor);
+            return this.save_as(textEditor);
         }
     }
 
-    public void save_as(TextEditor textEditor) {
+    public boolean save_as(TextEditor textEditor) {
         fileChooser.setDialogTitle("Select a file that you want to save"); 
         fileId = fileChooser.showSaveDialog(textEditor);
         if (fileId == JFileChooser.APPROVE_OPTION) {
             File file = fileChooser.getSelectedFile();
 			if (this.write(file, textEditor.getText())) {
-                System.out.println("Save as file: " + file.getAbsolutePath());
                 textEditor.getFileContollor().setFileInfo(textEditor, file.getName(), file.getAbsolutePath());
+                return true;
             }
         }
+        return false;
     }
 
     public boolean write(File file, String context) {
@@ -45,7 +45,6 @@ public class FileAction {
             writer.write(context);
             writer.close();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
         return true;
@@ -60,9 +59,7 @@ public class FileAction {
                 File file = fileChooser.getSelectedFile();
                 String content = new String (Files.readAllBytes(Paths.get(file.getAbsolutePath())));
                 textEditor.getTextArea().setText(content);
-                System.out.println("open file: " + file.getAbsolutePath() + content);
             } catch (IOException e1) {
-                // TODO Auto-generated catch block
                 e1.printStackTrace();
             }
             

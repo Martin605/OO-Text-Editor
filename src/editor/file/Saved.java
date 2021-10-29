@@ -1,10 +1,15 @@
 package editor.file;
 
 class Saved extends FileState {
+    Saved(FileContollor f) {
+        f.get_TextEditor().setState("[Saved]");
+    }
     void save(FileContollor f) {
-        System.out.println("not change");
     };
     void run(FileContollor f) {
         System.out.println("Run");
+    };
+    void close(FileContollor f) {
+        f.get_TextEditor().dispose();
     };
 }
