@@ -3,8 +3,7 @@ package editor;
 import javax.swing.*;
 
 import editor.gui.menuBar.MenuBar;
-import editor.record.RecordController;
-import editor.record.RecordListener;
+import editor.record.*;
 import editor.file.FileContollor;
 import editor.gui.body.TextArea;
 
@@ -16,7 +15,7 @@ public class TextEditor extends JFrame {
     private EditorGroup editorGroup = new EditorGroup();
     private FileContollor fileContollor;
     private JTextArea text_area = new TextArea();
-    // private JScrollPane scroll_pane = new JScrollPane(text_area);
+    private RecordController recordController;
 
     public TextEditor() {
         super("OO Text Editor");
@@ -26,6 +25,7 @@ public class TextEditor extends JFrame {
         JMenuBar menu_bar = new MenuBar(this);
 
         new RecordListener(this);
+        recordController = new RecordController(this);
         //new RecordController(this);
         
         // add scroll
@@ -72,6 +72,10 @@ public class TextEditor extends JFrame {
 
     public JTextArea getTextArea() {
         return this.text_area;
+    }
+
+    public RecordController getRecordController() {
+        return this.recordController;
     }
 
     public FileContollor getFileContollor() {

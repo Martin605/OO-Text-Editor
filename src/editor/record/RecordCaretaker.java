@@ -1,6 +1,8 @@
 package editor.record;
 import java.util.Stack;
 
+import editor.TextEditor;
+
 
 public class RecordCaretaker {
     //處理多個Memento，如ArrayList
