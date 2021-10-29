@@ -55,15 +55,21 @@ public class FileAction {
         fileId = fileChooser.showOpenDialog(textEditor);
 
         if (fileId == JFileChooser.APPROVE_OPTION) {
-            try {
-                File file = fileChooser.getSelectedFile();
-                String content = new String (Files.readAllBytes(Paths.get(file.getAbsolutePath())));
-                textEditor.getTextArea().setText(content);
-            } catch (IOException e1) {
-                e1.printStackTrace();
-            }
-            
+            File file = fileChooser.getSelectedFile();
+            read(textEditor, file.getAbsolutePath());
         }
 
     }
+
+    public boolean read(TextEditor textEditor, String filePath) {
+        String content;
+        try {
+            content = new String (Files.readAllBytes( Paths.get(filePath) ));
+            textEditor.getTextArea().setText(content);
+            return true;
+        } catch (IOException e) {
+            return false;
+        }
+    }
+
 }
