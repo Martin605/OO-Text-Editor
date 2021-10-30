@@ -20,6 +20,7 @@ public class EditMenu extends MenuItem {
                 }
             )
         );
+        this.menuItem.add(new JMenuItem("========"));
         this.menuItem.add(
             new JMenuItem(
                 new AbstractAction("cut"){
@@ -50,6 +51,7 @@ public class EditMenu extends MenuItem {
                 }
             )
         );
+        this.menuItem.add(new JMenuItem("========"));
         this.menuItem.add( 
             new JMenuItem(
                 new AbstractAction("search"){
