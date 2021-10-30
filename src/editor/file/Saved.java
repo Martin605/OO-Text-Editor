@@ -1,5 +1,7 @@
 package editor.file;
 
+//State Pattern
+//Concrete State
 class Saved extends FileState {
     Saved(FileContollor f) {
         f.get_TextEditor().setState("[Saved]");
