@@ -1,6 +1,6 @@
-package editor.search;
+package editor.classList.iterator;
 
-public class Repository implements SContainer {
+public class Repository implements CContainer {
 
     String[] str;
     String key;
@@ -11,11 +11,11 @@ public class Repository implements SContainer {
     }
 
     @Override
-    public SIterator getIterator() {
+    public CIterator getIterator() {
         return new SearchIterator();
     }
 
-    private class SearchIterator implements SIterator {
+    private class SearchIterator implements CIterator {
         int index;
 
         @Override

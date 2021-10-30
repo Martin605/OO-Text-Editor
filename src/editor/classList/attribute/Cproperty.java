@@ -1,6 +1,6 @@
-package editor.classList;
+package editor.classList.attribute;
 
-public class Cmethod implements CAttribute {
+public class Cproperty implements CAttribute {
 
     private String permisstion;
     private String name;
@@ -13,7 +13,7 @@ public class Cmethod implements CAttribute {
 
     @Override
     public String getType(){
-        return "Method";
+        return "Property";
     }
 
     @Override
@@ -25,5 +25,4 @@ public class Cmethod implements CAttribute {
     public String getPermission() {
         return this.permisstion;
     }
-    
 }

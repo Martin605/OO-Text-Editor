@@ -1,11 +1,10 @@
 package editor.gui.frame;
 
-import javax.swing.*;
-
 import editor.Editor;
 
 import java.awt.*;
 import java.awt.event.*;
+import javax.swing.*;
 
 public class Frame extends Editor {
 

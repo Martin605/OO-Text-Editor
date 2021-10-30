@@ -8,7 +8,6 @@ public class StyleSet {
 	private StyleBuilder styleBuilder;
 	public StyleSet(StyleBuilder styleBuilder) {
 		this.styleBuilder = styleBuilder;
-		// TODO Auto-generated constructor stub?
 	}
 	
 	public Style MainStyle() { //第一種字體風格

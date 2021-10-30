@@ -1,33 +1,43 @@
 package editor.gui.frame;
 
-import java.awt.BorderLayout;
-import java.awt.event.ActionEvent;
-
 import javax.swing.*;
+import java.awt.*;
+import java.awt.BorderLayout;
 
 import editor.visitor.*;
 import editor.TextEditor;
 
 public class TextCounterFrame extends Frame {
 
-    private TextEditor te;
-    JLabel context;
+    JLabel context = new JLabel("");
+    TextEditor te;
+    Comparison a = new Comparison();
 
     public TextCounterFrame(TextEditor te) {
         super("Text Counter");
         this.te = te;
 
-        Comparison a = new Comparison();
-        		a.Visitor(te.getText());		
-        JLabel context = new JLabel(String.valueOf(a.getSum()));
         this.add(context, BorderLayout.CENTER);
 
-        this.setSize(250, 80);
+        this.run_count();
+        this.setSize(250, 100);
         this.setVisible(true);
+        te.setTextCounter(this);
+    }
+
+    public void run_count() {
+        a.Visitor(te.getText());
+        this.set_count(a.getSum());
     }
 
     public void set_count(int count) {
-        context.setText("目前字數 : "+Integer.toString(count));
+        this.context.setText("目前字數 : "+Integer.toString(count));
+    }
+
+    @Override
+    public void update_theme(Color background, Color foreground) {
+        super.update_theme(background, foreground);;
+        this.context.setForeground(foreground);
     }
 
 }

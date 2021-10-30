@@ -6,12 +6,10 @@ public class Search {
         // Repository searchRepository = new SearchRepository();
         Repository strToSearchRepository = new Repository(str);
         
-        for(SIterator i = strToSearchRepository.getIterator(); i.hasNext();) {
-            String s = (String)i.next();
-            if (searchStr.equals(s)) {
-                System.out.println(s);
-            }
+        for(SIterator it = strToSearchRepository.getIterator(); it.hasNext();) {
+            it.next();
         }
+        
     }
 }
 

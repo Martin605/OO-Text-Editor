@@ -62,18 +62,6 @@ public class EditMenu extends MenuItem {
                 }
             )
         );
-
-        this.menuItem.add(new JMenuItem("========"));
-        this.menuItem.add( 
-            new JMenuItem(
-                new AbstractAction("TextCounterFrame"){
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        new TextCounterFrame(te);
-                    }
-                }
-            )
-        );
         this.addToThis();
     }
 }

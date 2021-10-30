@@ -1,4 +1,4 @@
-package editor.classList;
+package editor.classList.attribute;
 
 import java.util.*;
 

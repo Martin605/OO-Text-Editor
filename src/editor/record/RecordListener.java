@@ -37,6 +37,7 @@ public class RecordListener implements DocumentListener{ //繼承JAVA套件的Do
             this.te.getFileContollor().editing();
             String text = doc.getText(0, doc.getLength());
             te.getRecordController().change(text);
+            te.runCount();
         } catch (BadLocationException e1) {
             e1.printStackTrace();
         }

@@ -2,11 +2,11 @@ package editor;
 
 import javax.swing.*;
 
-import editor.visitor.Visitor;
 import editor.gui.menuBar.MenuBar;
 import editor.record.*;
 import editor.file.FileContollor;
 import editor.gui.body.TextArea;
+import editor.gui.frame.TextCounterFrame;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -17,6 +17,7 @@ public class TextEditor extends Editor {
     private FileContollor fileContollor;
     private JTextPane text_area = new TextArea();
     private RecordController recordController;
+    private TextCounterFrame textCounter;
 
     public TextEditor() {
         super("OO Text Editor");
@@ -109,6 +110,19 @@ public class TextEditor extends Editor {
             JOptionPane.DEFAULT_OPTION,
             JOptionPane.PLAIN_MESSAGE
         );
+    }
+
+    public void runCount() {
+        if (this.textCounter != null) {
+            this.textCounter.run_count();
+        }
+    }
+
+    public void setTextCounter(TextCounterFrame textCounterFrame) {
+        if (this.textCounter != null) {
+            this.textCounter.dispose();
+        }
+        this.textCounter = textCounterFrame;
     }
   
 }
