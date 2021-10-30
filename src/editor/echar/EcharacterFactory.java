@@ -19,20 +19,16 @@ public class EcharacterFactory{
         return character;
     }
 
-    public static ArrayList<Echaracter> stringToCharacter(String word){
+    public static Estring stringToCharacter(String word){
         ArrayList<Echaracter> wordChar = new ArrayList<Echaracter>();
         for(int i=0; i<word.length();i++) {
             wordChar.add(getCharacter(word.substring(i,i+1)));
         }
-        return wordChar;
+        return new Estring(wordChar);
     }
 
-    public static String arrayListToString(ArrayList<Echaracter> word){
-        String str = new String();
-        for(Echaracter i:word) {
-            str = str + i.getCharacter();
-        }
-        return str;
+    public static String arrayListToString(Estring word){
+        return word.getCharacter();
     }
 
 }

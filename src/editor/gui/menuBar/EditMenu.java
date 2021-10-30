@@ -62,6 +62,7 @@ public class EditMenu extends MenuItem {
                 }
             )
         );
+
         this.menuItem.add(new JMenuItem("========"));
         this.menuItem.add( 
             new JMenuItem(

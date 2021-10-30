@@ -5,13 +5,15 @@ import javax.swing.text.BadLocationException;
 import javax.swing.text.Document;
 import editor.TextEditor;
 
-public class RecordListener implements DocumentListener{
 
-    TextEditor te;
+//文字編輯器會使用
+public class RecordListener implements DocumentListener{ //繼承JAVA套件的DocumentListener
 
-    public RecordListener(TextEditor te) {
+    TextEditor te; //宣告一個TextEditor的變數te
+
+    public RecordListener(TextEditor te) { 
         this.te = te;
-        te.getTextArea().getDocument().addDocumentListener(this);
+        te.getTextArea().getDocument().addDocumentListener(this); 
     }
 
     @Override

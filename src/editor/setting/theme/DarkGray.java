@@ -3,6 +3,7 @@ package editor.setting.theme;
 import java.awt.Color;
 import editor.EditorGroup;
 
+// Strategy Pattern
 // 第四種樣式(深灰色)
 public class DarkGray implements Theme { 
     @Override 
