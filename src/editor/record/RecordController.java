@@ -23,8 +23,12 @@ public class RecordController {
 
     public void restore() {
         restoring = true;
-        careTaker.getMemento(recordedits);
-        this.texteditor.getTextArea().setText(EcharacterFactory.arrayListToString(recordedits.getEdit()));
+        boolean undo = careTaker.getMemento(recordedits);
+        if (undo) {
+            this.texteditor.getTextArea().setText(EcharacterFactory.arrayListToString(recordedits.getEdit()));
+        } else {
+            texteditor.showMsg("Cannot undo!!!", "!!!!!!Cannot undo!!!!!!");
+        }
         restoring = false;
     }
 

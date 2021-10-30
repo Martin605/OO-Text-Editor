@@ -47,14 +47,13 @@ public class TextEditor extends JFrame {
                 Integer jop = JOptionPane.showConfirmDialog(
                     null, 
                     "Are you want to save it before close this editor?", 
-                    "==Close Editor==", 
-                    JOptionPane.YES_NO_OPTION,
+                    "SAVE FILE???", 
+                    JOptionPane.YES_NO_CANCEL_OPTION,
                     JOptionPane.QUESTION_MESSAGE
                 );
                 if ( jop == JOptionPane.YES_OPTION){
                     fileContollor.close();
-                    dispose();
-                } else {
+                } else if ( jop == JOptionPane.NO_OPTION){
                     dispose();
                 }
             }
@@ -97,6 +96,16 @@ public class TextEditor extends JFrame {
 
     public void setState(String state) {
         this.setTitle(state + " OO Text Editor ");
+    }
+
+    public void showMsg(String title, String msg) {
+        JOptionPane.showConfirmDialog(
+            null, 
+            msg, 
+            title, 
+            JOptionPane.DEFAULT_OPTION,
+            JOptionPane.PLAIN_MESSAGE
+        );
     }
 
 }

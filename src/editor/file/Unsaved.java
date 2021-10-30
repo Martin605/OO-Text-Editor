@@ -17,6 +17,6 @@ class Unsaved extends FileState {
     };
     void close(FileContollor f) {
         f.getState().save(f);
-        f.getState().close(f);
+        f.get_TextEditor().dispose();
     };
 }
