@@ -10,28 +10,28 @@ public class EditorGroup{
     // Singleton Pattern (only can new one EditorGroup)
     private static EditorGroup uniqueEditorGroup = new EditorGroup();
     // Observer Pattern (list)
-    private static ArrayList<TextEditor> editorGroupList = new ArrayList<TextEditor>();
+    private static ArrayList<Editor> editorList = new ArrayList<Editor>();
 
     public static EditorGroup getEditorGroup() {
         return uniqueEditorGroup;
     }
 
-    public void addEditor(TextEditor textEditor){
-        editorGroupList.add(textEditor);
+    public void addEditor(Editor textEditor){
+        editorList.add(textEditor);
     };
 
-    public void removeEditor(TextEditor textEditor){
-        editorGroupList.remove(textEditor);
+    public void removeEditor(Editor textEditor){
+        editorList.remove(textEditor);
     }
 
     // Observer Pattern (loop)
     public void setTheme(Color background, Color foreground) {
-        for (TextEditor textEditor : editorGroupList) {
-            textEditor.setTheme(background, foreground);
+        for (Editor textEditor : editorList) {
+            textEditor.update_theme(background, foreground);
         }
     };
     public void setFont(Font font) {
-    	for (TextEditor textEditor : editorGroupList) {
+    	for (Editor textEditor : editorList) {
             textEditor.setFont(font);
         }
     }

@@ -10,11 +10,11 @@ import editor.gui.body.TextArea;
 import java.awt.*;
 import java.awt.event.*;
 
-public class TextEditor extends JFrame {
+public class TextEditor extends Editor {
 
-    private EditorGroup editorGroup = new EditorGroup();
+    private EditorGroup editorGroup = EditorGroup.getEditorGroup();
     private FileContollor fileContollor;
-    private JTextArea text_area = new TextArea();
+    private JTextPane text_area = new TextArea();
     private RecordController recordController;
 
     public TextEditor() {
@@ -62,17 +62,23 @@ public class TextEditor extends JFrame {
         this.setVisible(true);
 
     }
-
-    public void setTheme(Color background, Color foreground) {
+    
+    @Override
+    public void update_theme(Color background, Color foreground) {
         text_area.setBackground(background);
         text_area.setForeground(foreground);
+    }
+
+    @Override
+    public void update_Font(Font font) {
+    	text_area.setFont(font);
     }
 
     public String getText() {
         return this.text_area.getText();
     }
 
-    public JTextArea getTextArea() {
+    public JTextPane getTextArea() {
         return this.text_area;
     }
 
@@ -82,10 +88,6 @@ public class TextEditor extends JFrame {
 
     public FileContollor getFileContollor() {
         return this.fileContollor;
-    }
-
-    public void setFont(Font font) {
-    	text_area.setFont(font);
     }
 
     @Override

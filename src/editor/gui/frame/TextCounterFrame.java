@@ -15,7 +15,8 @@ public class TextCounterFrame extends Frame {
         super("Text Counter");
         this.te = te;
         
-        JLabel context = new JLabel("");
+        JLabel context = new JLabel();
+
         this.add(context, BorderLayout.CENTER);
 
         this.setSize(250, 80);

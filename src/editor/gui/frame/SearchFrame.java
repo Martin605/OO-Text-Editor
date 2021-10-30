@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.*;
 
 import editor.TextEditor;
+import editor.search.Search;
 
 public class SearchFrame extends Frame {
 
@@ -20,8 +21,8 @@ public class SearchFrame extends Frame {
             new AbstractAction("search"){
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    System.out.println(field.getText());
                     ///~~~~FOR search main function
+                    Search.search(te.getText(), field.getText());
                 }
             }
         );
@@ -31,5 +32,7 @@ public class SearchFrame extends Frame {
         this.setSize(250, 80);
         this.setVisible(true);
     }
+
+    
 
 }

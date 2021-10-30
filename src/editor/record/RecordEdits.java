@@ -1,20 +1,20 @@
 package editor.record;
 import java.util.ArrayList;
 
-import editor.echar.Echaracter;
+import editor.echar.Estring;
 
 
 public class RecordEdits { //Originator
-    ArrayList<ArrayList<Echaracter>> edits = new ArrayList<>();
+    ArrayList<Estring> edits = new ArrayList<>();
 
 
-    public void addEdits(ArrayList<Echaracter> arrayList) 
+    public void addEdits(Estring arrayList) 
     {
         edits.add(arrayList); //傳入Edit串列，使用新建的edits串列來用add加入 傳入的Edit串列
     }
 
-    public ArrayList<ArrayList<Echaracter>> getEdits(ArrayList<ArrayList<Echaracter>> arrayList){
-        return (ArrayList<ArrayList<Echaracter>>) arrayList.clone(); //取得目前存在串列的edits
+    public ArrayList<Estring> getEdits(ArrayList<Estring> arrayList){
+        return (ArrayList<Estring>) arrayList.clone(); //取得目前存在串列的edits
     }
 
     public RecordMemento saveToMemento() //用在caretaker的getMemento 存到Memento
@@ -27,7 +27,7 @@ public class RecordEdits { //Originator
         edits = recordmemento.getedits();
     }
 
-    public ArrayList<Echaracter> getEdit(){
+    public Estring getEdit(){
         return edits.get(edits.size()-1); //取得目前字串
     }
 

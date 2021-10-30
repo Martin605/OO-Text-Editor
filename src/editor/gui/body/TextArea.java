@@ -4,12 +4,12 @@ import java.awt.Font;
 
 import javax.swing.*;
 
-public class TextArea extends JTextArea {
+public class TextArea extends JTextPane {
 
     public TextArea() {
         super();
         this.setFont(new Font("Dialog", Font.PLAIN , 16));
-        this.setLineWrap(true);
-        this.setWrapStyleWord(true);
+        //this.setLineWrap(true);
+        //this.setWrapStyleWord(true);
     }
 }
