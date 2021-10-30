@@ -15,7 +15,7 @@ public class Search extends MenuItem{
 	TextEditor textEditor;
 	IteratorSearch iterator = new IteratorSearch();
 	Search(TextEditor textEditor) {
-        super("Search", textEditor);
+        super("Search");
         this.menuItem.add(
             new JMenuItem(
                 new AbstractAction("Search"){

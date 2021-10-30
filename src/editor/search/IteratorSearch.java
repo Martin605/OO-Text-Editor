@@ -3,16 +3,14 @@ package editor.search;
 import java.util.ArrayList;
 import java.util.Stack;
 
-import editor.search.Iteratorcontainer;
-
 public class IteratorSearch {
 	ArrayList<container> function = new ArrayList<container>();
 	
 	private Function f;
 	int index;
-	public Boolean hasNext(){
+	public Boolean hasNext() {
 	
-		if(index<function.length)
+		if(index<function.size())
 		{
 			return true;
 		}
@@ -21,7 +19,7 @@ public class IteratorSearch {
 	public Object next(){
 		if(this.hasNext())
 		{
-			return function[index++];
+			return function.get(index++);
 		}
 			return null;
 	}
