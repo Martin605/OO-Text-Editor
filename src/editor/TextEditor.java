@@ -3,8 +3,7 @@ package editor;
 import javax.swing.*;
 
 import editor.gui.menuBar.MenuBar;
-import editor.record.RecordController;
-import editor.record.RecordListener;
+import editor.record.*;
 import editor.file.FileContollor;
 import editor.gui.body.TextArea;
 
@@ -16,7 +15,7 @@ public class TextEditor extends JFrame {
     private EditorGroup editorGroup = new EditorGroup();
     private FileContollor fileContollor;
     private JTextArea text_area = new TextArea();
-    // private JScrollPane scroll_pane = new JScrollPane(text_area);
+    private RecordController recordController;
 
     public TextEditor() {
         super("OO Text Editor");
@@ -26,6 +25,7 @@ public class TextEditor extends JFrame {
         JMenuBar menu_bar = new MenuBar(this);
 
         new RecordListener(this);
+        recordController = new RecordController(this);
         //new RecordController(this);
         
         // add scroll
@@ -46,13 +46,15 @@ public class TextEditor extends JFrame {
             public void windowClosing(WindowEvent windowEvent) {
                 Integer jop = JOptionPane.showConfirmDialog(
                     null, 
-                    "Are you sure you want to close this editor?", 
-                    "==Close Editor==", 
-                    JOptionPane.YES_NO_OPTION,
+                    "Are you want to save it before close this editor?", 
+                    "SAVE FILE???", 
+                    JOptionPane.YES_NO_CANCEL_OPTION,
                     JOptionPane.QUESTION_MESSAGE
                 );
                 if ( jop == JOptionPane.YES_OPTION){
                     fileContollor.close();
+                } else if ( jop == JOptionPane.NO_OPTION){
+                    dispose();
                 }
             }
         });
@@ -74,8 +76,16 @@ public class TextEditor extends JFrame {
         return this.text_area;
     }
 
+    public RecordController getRecordController() {
+        return this.recordController;
+    }
+
     public FileContollor getFileContollor() {
         return this.fileContollor;
+    }
+
+    public void setFont(Font font) {
+    	text_area.setFont(font);
     }
 
     @Override
@@ -86,6 +96,16 @@ public class TextEditor extends JFrame {
 
     public void setState(String state) {
         this.setTitle(state + " OO Text Editor ");
+    }
+
+    public void showMsg(String title, String msg) {
+        JOptionPane.showConfirmDialog(
+            null, 
+            msg, 
+            title, 
+            JOptionPane.DEFAULT_OPTION,
+            JOptionPane.PLAIN_MESSAGE
+        );
     }
 
 }

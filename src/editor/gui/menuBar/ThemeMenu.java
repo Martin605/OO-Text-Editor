@@ -2,8 +2,6 @@ package editor.gui.menuBar;
 
 import java.awt.event.ActionEvent;
 import javax.swing.*;
-
-import editor.TextEditor;
 import editor.setting.ThemeEditor;
 import editor.setting.theme.*;
 
@@ -11,8 +9,8 @@ public class ThemeMenu extends MenuItem {
 
     ThemeEditor themeEditor;
 
-    ThemeMenu(TextEditor te) {
-        super("Theme", te);
+    ThemeMenu() {
+        super("Theme");
         ThemeEditor themeEditor = new ThemeEditor();
         this.menuItem.add( 
             new JMenuItem(
@@ -20,6 +18,7 @@ public class ThemeMenu extends MenuItem {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         themeEditor.ChoiceTheme(new Light());
+                        themeEditor.change();
                     }
                 }
             )
@@ -30,6 +29,7 @@ public class ThemeMenu extends MenuItem {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         themeEditor.ChoiceTheme(new Dark());
+                        themeEditor.change();
                     }
                 }
             )
@@ -40,6 +40,7 @@ public class ThemeMenu extends MenuItem {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         themeEditor.ChoiceTheme(new LightGray());
+                        themeEditor.change();
                     }
                 }
             )
@@ -50,6 +51,7 @@ public class ThemeMenu extends MenuItem {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         themeEditor.ChoiceTheme(new DarkGray());
+                        themeEditor.change();
                     }
                 }
             )
@@ -60,6 +62,7 @@ public class ThemeMenu extends MenuItem {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         themeEditor.ChoiceTheme(new BlueDark());
+                        themeEditor.change();
                     }
                 }
             )

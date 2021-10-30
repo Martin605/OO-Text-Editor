@@ -3,11 +3,24 @@ package editor.gui.menuBar;
 import javax.swing.*;
 
 import editor.TextEditor;
+import editor.gui.frame.SearchFrame;
+
 import java.awt.event.ActionEvent;
 
 public class EditMenu extends MenuItem {
     EditMenu(TextEditor te) {
-        super("Edit", te);
+        super("Edit");
+        this.menuItem.add(
+            new JMenuItem(
+                new AbstractAction("Undo"){
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        te.getRecordController().restore(); //用戶想要復原
+                    }
+                }
+            )
+        );
+        this.menuItem.add(new JMenuItem("========"));
         this.menuItem.add(
             new JMenuItem(
                 new AbstractAction("cut"){
@@ -34,6 +47,17 @@ public class EditMenu extends MenuItem {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         te.getTextArea().paste();
+                    }
+                }
+            )
+        );
+        this.menuItem.add(new JMenuItem("========"));
+        this.menuItem.add( 
+            new JMenuItem(
+                new AbstractAction("search"){
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        new SearchFrame(te);
                     }
                 }
             )

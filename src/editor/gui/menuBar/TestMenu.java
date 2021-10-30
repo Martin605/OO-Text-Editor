@@ -5,24 +5,11 @@ import javax.swing.*;
 
 import editor.TextEditor;
 import editor.file.FileAction;
-import editor.record.RecordCaretaker;
 
 public class TestMenu extends MenuItem {
 
-    TextEditor textEditor;
-    RecordCaretaker careTaker = new RecordCaretaker();
     TestMenu(TextEditor textEditor) {
-        super("Undo", textEditor);
-        this.menuItem.add(
-            new JMenuItem(
-                new AbstractAction("Undo"){
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        System.out.println(textEditor.getText());
-                    }
-                }
-            )
-        );
+        super("Test");
         this.menuItem.add(
             new JMenuItem(
                 new AbstractAction("Test Data"){
@@ -35,10 +22,10 @@ public class TestMenu extends MenuItem {
         );
         this.menuItem.add(
             new JMenuItem(
-                new AbstractAction("Test Data"){
+                new AbstractAction("Get Test Data"){
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        new FileAction().read(textEditor,"src/Main.java");
+                        textEditor.getTextArea().setText("qwertyuio");
                     }
                 }
             )

@@ -24,7 +24,6 @@ public class ThemeEditor {
     public void ChoiceTheme(Theme format) { 
         // 選擇佈景主題 
         theme = format; 
-        this.change();
     } 
     
 }
