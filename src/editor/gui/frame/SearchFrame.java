@@ -21,6 +21,7 @@ public class SearchFrame extends Frame {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     System.out.println(field.getText());
+                    System.out.println("55555555");
                     ///~~~~FOR search main function
                 }
             }
