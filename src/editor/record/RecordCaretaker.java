@@ -1,9 +1,6 @@
 package editor.record;
 import java.util.Stack;
 
-import editor.TextEditor;
-
-
 public class RecordCaretaker {
     //處理多個Memento，如ArrayList
     Stack<RecordMemento> history = new Stack<>();  //Last In First Out

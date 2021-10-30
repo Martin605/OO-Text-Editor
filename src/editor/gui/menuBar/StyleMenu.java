@@ -1,25 +1,20 @@
 package editor.gui.menuBar;
 
-import java.awt.Color;
 import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractAction;
 import javax.swing.JMenuItem;
 
 import editor.EditorGroup;
-import editor.TextEditor;
-import editor.gui.body.Style;
-import editor.gui.body.StyleFactory;
-import editor.gui.body.StyleSet;
-import editor.gui.body.TextArea;
+import editor.setting.style.*;
 
 public class StyleMenu extends MenuItem {
-	public TextEditor textEditer;
+
 	StyleFactory stylefactory = new StyleFactory(); 
 	StyleSet styleset = new StyleSet(stylefactory);
 	
-	StyleMenu(TextEditor te) {
-		super("Style", te);
+	StyleMenu() {
+		super("Style");
 		this.menuItem.add( 
 	            new JMenuItem(
 	                new AbstractAction("Style1"){
@@ -42,7 +37,6 @@ public class StyleMenu extends MenuItem {
 	                }
 	            )
 	        );
-		// TODO Auto-generated constructor stub
 		this.addToThis();
 	}
 

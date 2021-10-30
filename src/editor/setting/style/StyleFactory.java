@@ -1,4 +1,4 @@
-package editor.gui.body;
+package editor.setting.style;
 
 public class StyleFactory extends StyleBuilder{
 	private int size;

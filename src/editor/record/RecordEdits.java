@@ -13,13 +13,13 @@ public class RecordEdits { //Originator
         edits.add(arrayList); //傳入Edit串列，使用新建的edits串列來用add加入 傳入的Edit串列
     }
 
-    public ArrayList<ArrayList<Echaracter>> getEdits(){
-        return (ArrayList<ArrayList<Echaracter>>)edits.clone(); //取得目前存在串列的edits
+    public ArrayList<ArrayList<Echaracter>> getEdits(ArrayList<ArrayList<Echaracter>> arrayList){
+        return (ArrayList<ArrayList<Echaracter>>) arrayList.clone(); //取得目前存在串列的edits
     }
 
     public RecordMemento saveToMemento() //用在caretaker的getMemento 存到Memento
     {
-        return new RecordMemento(getEdits()); //創造新的edits到Memento
+        return new RecordMemento(getEdits(edits)); //創造新的edits到Memento
     }
 
     public void restoreFromMemento(RecordMemento recordmemento) //從Memento復原記錄檔，由caretaker來使用
@@ -28,13 +28,7 @@ public class RecordEdits { //Originator
     }
 
     public ArrayList<Echaracter> getEdit(){
-        System.out.println(getEdits());
         return edits.get(edits.size()-1); //取得目前字串
     }
 
-    @Override
-    public String toString()
-    {
-        return "RecordEdits的edits: " + edits;
-    }
 }

@@ -1,5 +1,5 @@
-package editor.gui.body;
-import java.applet.*;
+package editor.setting.style;
+
 import java.awt.*;
 public class StyleSet {
 	private StyleBuilder styleBuilder;

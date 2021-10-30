@@ -1,4 +1,4 @@
-package editor.gui.body;
+package editor.setting.style;
 
 public abstract class StyleBuilder {
 	protected Style style;

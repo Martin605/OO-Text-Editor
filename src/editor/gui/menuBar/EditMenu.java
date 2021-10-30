@@ -7,7 +7,7 @@ import java.awt.event.ActionEvent;
 
 public class EditMenu extends MenuItem {
     EditMenu(TextEditor te) {
-        super("Edit", te);
+        super("Edit");
         this.menuItem.add(
             new JMenuItem(
                 new AbstractAction("Undo"){

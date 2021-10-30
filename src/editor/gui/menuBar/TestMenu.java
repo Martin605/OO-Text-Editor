@@ -8,9 +8,8 @@ import editor.file.FileAction;
 
 public class TestMenu extends MenuItem {
 
-    TextEditor textEditor;
     TestMenu(TextEditor textEditor) {
-        super("Test", textEditor);
+        super("Test");
         this.menuItem.add(
             new JMenuItem(
                 new AbstractAction("Test Data"){

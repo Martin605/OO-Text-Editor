@@ -1,4 +1,4 @@
-package editor.gui.body;
+package editor.setting.style;
 
 import java.awt.*;
 public class Style {
@@ -6,7 +6,7 @@ public class Style {
 	private int size;
 	private String fontName;
 	private int  fontStyle;
-	private Color color;
+	// private Color color;
 		
 		
 	public Style(int size,String fontName,int fontStyle) {

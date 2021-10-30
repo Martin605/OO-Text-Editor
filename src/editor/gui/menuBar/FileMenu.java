@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public class FileMenu extends MenuItem {
     FileMenu(TextEditor textEditor) {
-        super("File", textEditor);
+        super("File");
 
         this.menuItem.add( 
             new JMenuItem(
@@ -29,11 +29,9 @@ public class FileMenu extends MenuItem {
                     @Override
                     public void actionPerformed(ActionEvent e) {
 			    		try {
-			    			new FileAction().open(textEditor);
-			    		} catch (IOException e1) {
-			    			// TODO Auto-generated catch block
-			    			e1.printStackTrace();
-			    		}
+                            new FileAction().open(textEditor);
+                        } catch (IOException e1) {
+                        }
                     }
                 }
             )

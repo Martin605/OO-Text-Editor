@@ -4,7 +4,6 @@ import javax.swing.event.DocumentListener;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.Document;
 import editor.TextEditor;
-import editor.echar.EcharacterFactory;
 
 public class RecordListener implements DocumentListener{
 
@@ -37,7 +36,7 @@ public class RecordListener implements DocumentListener{
             String text = doc.getText(0, doc.getLength());
             te.getRecordController().change(text);
         } catch (BadLocationException e1) {
-            // TODO Auto-generated catch block            e1.printStackTrace();
+            e1.printStackTrace();
         }
     }
 }
