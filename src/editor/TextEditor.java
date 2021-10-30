@@ -46,13 +46,16 @@ public class TextEditor extends JFrame {
             public void windowClosing(WindowEvent windowEvent) {
                 Integer jop = JOptionPane.showConfirmDialog(
                     null, 
-                    "Are you sure you want to close this editor?", 
+                    "Are you want to save it before close this editor?", 
                     "==Close Editor==", 
                     JOptionPane.YES_NO_OPTION,
                     JOptionPane.QUESTION_MESSAGE
                 );
                 if ( jop == JOptionPane.YES_OPTION){
                     fileContollor.close();
+                    dispose();
+                } else {
+                    dispose();
                 }
             }
         });

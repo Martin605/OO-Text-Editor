@@ -3,6 +3,8 @@ package editor.gui.menuBar;
 import javax.swing.*;
 
 import editor.TextEditor;
+import editor.gui.frame.SearchFrame;
+
 import java.awt.event.ActionEvent;
 
 public class EditMenu extends MenuItem {
@@ -44,6 +46,16 @@ public class EditMenu extends MenuItem {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         te.getTextArea().paste();
+                    }
+                }
+            )
+        );
+        this.menuItem.add( 
+            new JMenuItem(
+                new AbstractAction("search"){
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        new SearchFrame(te);
                     }
                 }
             )
