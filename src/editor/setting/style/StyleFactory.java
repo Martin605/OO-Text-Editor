@@ -1,5 +1,7 @@
 package editor.setting.style;
 
+//Builder Pattern
+//擔任Factory的角色
 public class StyleFactory extends StyleBuilder{
 	private int size;
 	private String fontName;
@@ -24,7 +26,7 @@ public class StyleFactory extends StyleBuilder{
 	
 	
 	@Override
-	public Style build() {
+	public Style build() { //創造並回傳設定好的大小、字型、正常或粗體
 		return new Style(size,fontName,fontStyle);
 	}
 }

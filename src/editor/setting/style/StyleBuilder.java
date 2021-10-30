@@ -1,5 +1,7 @@
 package editor.setting.style;
 
+//Builder Pattern
+//擔任Builder的角色
 public abstract class StyleBuilder {
 	protected Style style;
 	
