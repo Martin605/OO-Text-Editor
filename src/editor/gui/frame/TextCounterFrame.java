@@ -10,6 +10,7 @@ import editor.TextEditor;
 public class TextCounterFrame extends Frame {
 
     private TextEditor te;
+    JLabel context;
 
     public TextCounterFrame(TextEditor te) {
         super("Text Counter");
@@ -21,6 +22,10 @@ public class TextCounterFrame extends Frame {
 
         this.setSize(250, 80);
         this.setVisible(true);
+    }
+
+    public void set_count(int count) {
+        context.setText("目前字數 : "+Integer.toString(count));
     }
 
 }

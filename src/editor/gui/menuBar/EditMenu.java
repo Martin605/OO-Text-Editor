@@ -62,6 +62,7 @@ public class EditMenu extends MenuItem {
                 }
             )
         );
+        
         this.addToThis();
     }
 }

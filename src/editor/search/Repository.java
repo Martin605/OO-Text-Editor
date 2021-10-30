@@ -6,11 +6,12 @@ import editor.echar.Estring;
 
 public class Repository implements SContainer {
 
-    Estring str;
+    String[] str;
     String key;
+    int i = -1;
 
     Repository(String str) {
-        this.str = EcharacterFactory.stringToCharacter(str) ;
+        this.str = str.split(" |\n");
     }
 
     @Override
@@ -23,8 +24,9 @@ public class Repository implements SContainer {
 
         @Override
         public boolean hasNext() {
-            if(index<str.size())
+            if(i<str.length)
             {
+                i+=1;
                 return true;
             }
             return false;
@@ -34,7 +36,7 @@ public class Repository implements SContainer {
         public Object next(){
             if(this.hasNext())
             {
-                return str.get(index++);
+                return str[index++];
             }
                  return null;
         }
