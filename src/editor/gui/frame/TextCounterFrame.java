@@ -5,7 +5,7 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.*;
 
-import editor.visitor.Comparison;
+import editor.visitor.*;
 import editor.TextEditor;
 
 public class TextCounterFrame extends Frame {
@@ -17,8 +17,9 @@ public class TextCounterFrame extends Frame {
         super("Text Counter");
         this.te = te;
 
-        int a = new Comparison().aVisitor(te.getText());
-        JLabel context = new JLabel(String.valueOf(a));       
+        Comparison a = new Comparison();
+        		a.Visitor(te.getText());		
+        JLabel context = new JLabel(String.valueOf(a.getSum()));
         this.add(context, BorderLayout.CENTER);
 
         this.setSize(250, 80);

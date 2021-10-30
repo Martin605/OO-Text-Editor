@@ -1,13 +1,12 @@
 package editor.visitor;
 public class Comparison implements editor.visitor.Visitor {
-
+	int sum =0;
 	@Override
-	public int aVisitor(String p ){
-		int b;
-		b=p.length();
-		return b;
+	public void Visitor(String p ){
+		
+		sum=p.length();
 	}
-
-
-
+	public int getSum() {
+	return sum;
+	}
 }
