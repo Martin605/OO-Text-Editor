@@ -21,6 +21,7 @@ public class SearchFrame extends Frame {
             new AbstractAction("search"){
                 @Override
                 public void actionPerformed(ActionEvent e) {
+
                     ///~~~~FOR search main function
                     Search.search(te.getText(), field.getText());
                 }

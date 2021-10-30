@@ -3,7 +3,7 @@ package editor.gui.menuBar;
 import javax.swing.*;
 
 import editor.TextEditor;
-import editor.gui.frame.SearchFrame;
+import editor.gui.frame.*;
 
 import java.awt.event.ActionEvent;
 
@@ -62,7 +62,18 @@ public class EditMenu extends MenuItem {
                 }
             )
         );
-        
+
+        this.menuItem.add(new JMenuItem("========"));
+        this.menuItem.add( 
+            new JMenuItem(
+                new AbstractAction("TextCounterFrame"){
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        new TextCounterFrame(te);
+                    }
+                }
+            )
+        );
         this.addToThis();
     }
 }

@@ -2,6 +2,7 @@ package editor;
 
 import javax.swing.*;
 
+import editor.visitor.Visitor;
 import editor.gui.menuBar.MenuBar;
 import editor.record.*;
 import editor.file.FileContollor;
@@ -109,5 +110,5 @@ public class TextEditor extends Editor {
             JOptionPane.PLAIN_MESSAGE
         );
     }
-
+  
 }
