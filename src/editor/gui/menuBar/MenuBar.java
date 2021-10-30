@@ -12,7 +12,6 @@ public class MenuBar extends JMenuBar {
         menu.add(new ThemeMenu());
         menu.add(new StyleMenu());
         menu.add(new TestMenu(textEditor));
-        menu.add(new Search(textEditor));
         for (JMenu i : menu ) {
             this.add(i);
         }

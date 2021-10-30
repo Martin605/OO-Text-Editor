@@ -1,24 +1,23 @@
 package editor.record;
 import java.util.ArrayList;
 
-import editor.echar.Echaracter;
+import editor.echar.Estring;
 
 //Memento Pattern
 //擔任Originator的角色
-public class RecordEdits { 
-    ArrayList<ArrayList<Echaracter>> edits = new ArrayList<>(); //宣告一個雙重陣列型態的物件，名稱為edits
+public class RecordEdits { //Originator
+    ArrayList<Estring> edits = new ArrayList<>(); //宣告一個雙重陣列型態的物件，名稱為edits
 
 
-    public void addEdits(ArrayList<Echaracter> arrayList) //將用戶在編輯器打入的字母存入edits??，會在RecorsController使用
+    public void addEdits(Estring arrayList) //將用戶在編輯器打入的字母存入edits??，會在RecorsController使用
     {
         edits.add(arrayList); 
         //使用陣列的add()加入打入的字母(小陣列)到edits(大陣列)
     }
 
-    public ArrayList<ArrayList<Echaracter>> getEdits(ArrayList<ArrayList<Echaracter>> arrayList){
+    public ArrayList<Estring> getEdits(ArrayList<Estring> arrayList){
         //複製新的編輯動作，來存入在RecordCaretaker的Stack裡面
-
-        return (ArrayList<ArrayList<Echaracter>>) arrayList.clone(); 
+        return (ArrayList<Estring>) arrayList.clone(); 
         //用在當addEdits()執行完之後，將動作(雙重陣列)複製，並回傳
     }
 
@@ -34,8 +33,8 @@ public class RecordEdits {
         //利用RecordMemento class裡的getedits()來回傳復原的edits，設定到現在的edits
     }
 
-    public ArrayList<Echaracter> getEdit(){ //取得上一步的動作(小陣列)，會在recordController用到
-        return edits.get(edits.size()-1); 
+    public Estring getEdit(){ //取得上一步的動作(小陣列)，會在recordController用到
+        return edits.get(edits.size()-1); //取得目前字串
         //利用陣列的get()來取得目前的小陣列(上一步動作)
         //size()-1是因為陣列的最後一個為空
     }

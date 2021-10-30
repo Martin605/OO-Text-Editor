@@ -2,10 +2,10 @@ package editor.classList;
 
 import java.util.*;
 
-public class Fclass implements CAttribute {
+public class Cclass implements CAttribute {
 
+    private String permission;
     private String name;
-    private String outputType;
     private List<CAttribute> attribute = new ArrayList<CAttribute>();
     
     public void addCAttribute(CAttribute a){
@@ -16,16 +16,25 @@ public class Fclass implements CAttribute {
         attribute.remove(a);
     }
 
+    @Override
     public String getName() {
         return this.name;
     }
 
+    @Override
     public String getType(){
         return "Class";
     }
-
+    
+    @Override
     public String getOutputType(){
-        return this.outputType;
+        return this.name;
     }
+
+    @Override
+    public String getPermission() {
+        return this.permission;
+    }
+    
     
 }

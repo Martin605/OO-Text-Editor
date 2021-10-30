@@ -5,4 +5,5 @@ interface CAttribute {
     public String getName();
     public String getType();
     public String getOutputType();
+    public String getPermission();
 }
