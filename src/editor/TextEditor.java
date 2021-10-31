@@ -98,7 +98,7 @@ public class TextEditor extends Editor {
         super.dispose();
     }
 
-    public void setState(String state) {
+    public void set_title(String state) {
         this.setTitle(state + " OO Text Editor ");
     }
 

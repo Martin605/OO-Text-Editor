@@ -54,6 +54,10 @@ public class FileContollor {
         return this.path;
     }
 
+    public String get_type() {
+        return "file";
+    }
+
     public TextEditor get_TextEditor() {
         return this.textEditor;
     }

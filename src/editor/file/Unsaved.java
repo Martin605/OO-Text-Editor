@@ -6,7 +6,7 @@ import editor.TextEditor;
 //Concrete State
 class Unsaved extends FileState {
     Unsaved(TextEditor textEditor) {
-        textEditor.setState("[Unsaved]");//秀出目前檔案為未儲存
+        textEditor.set_title("[Unsaved]");//秀出目前檔案為未儲存
     }
     void save(FileContollor f) {
         if(new FileAction().save(f.get_TextEditor())) { //如果沒有同樣的檔案
@@ -24,7 +24,7 @@ class Unsaved extends FileState {
         f.getState().run(f);
     };
     void close(FileContollor f) {
-        f.getState().save(f);
+        this.save(f);
         f.get_TextEditor().dispose();
     };
 }

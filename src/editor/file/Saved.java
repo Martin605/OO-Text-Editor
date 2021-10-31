@@ -4,7 +4,7 @@ package editor.file;
 //Concrete State
 class Saved extends FileState {
     Saved(FileContollor f) {
-        f.get_TextEditor().setState("[Saved]");
+        f.get_TextEditor().set_title("[Saved]");
     }
     void save(FileContollor f) {
     };

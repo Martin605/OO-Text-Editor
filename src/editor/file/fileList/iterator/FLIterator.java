@@ -1,7 +1,7 @@
-package editor.classList.iterator;
+package editor.file.fileList.iterator;
 
 // Iterator interface
-public interface CIterator {
+public interface FLIterator {
 	public boolean hasNext();
 	public Object next();
 }

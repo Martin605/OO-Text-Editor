@@ -3,10 +3,11 @@ package editor.gui.menuBar;
 import javax.swing.*;
 
 import editor.TextEditor;
-import editor.classList.iterator.CList;
+import editor.file.fileList.iterator.FLList;
 import editor.gui.frame.*;
 
 import java.awt.event.ActionEvent;
+import java.io.File;
 
 public class ToolMenu extends MenuItem {
     ToolMenu(TextEditor te) {
@@ -43,10 +44,10 @@ public class ToolMenu extends MenuItem {
         );
         this.menuItem.add(
             new JMenuItem(
-                new AbstractAction("Get Lsit"){
+                new AbstractAction("Get File List"){
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        CList.getList(te.getText());
+                        new FileListFrame(te);
                     }
                 }
             )

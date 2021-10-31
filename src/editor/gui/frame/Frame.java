@@ -39,6 +39,5 @@ public class Frame extends Editor {
     public void update_Font(Font font) {
         this.title.setFont(font);
     }
-
-
+    
 }

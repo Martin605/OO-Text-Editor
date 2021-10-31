@@ -15,7 +15,7 @@ public class TestMenu extends MenuItem {
                 new AbstractAction("Test Data"){
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        new FileAction().read(textEditor,"src/Main.java");
+                        new FileAction().read(textEditor,"README.md");
                     }
                 }
             )
