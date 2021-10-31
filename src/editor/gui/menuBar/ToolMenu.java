@@ -12,7 +12,7 @@ public class ToolMenu extends MenuItem {
         super("Tool");
         this.menuItem.add(
             new JMenuItem(
-                new AbstractAction("Preview"){
+                new AbstractAction("Preview (HTML)"){
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         new PreviewFrame(te);

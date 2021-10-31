@@ -31,7 +31,7 @@ public class FileListFrame extends Frame {
     public void run() {
         this.set_text(FLList.getList(new File(te.getFileContollor().get_path()).getParent()));
     }
-    
+
     public void set_text(String text) {
         this.context.setText(text);
     }

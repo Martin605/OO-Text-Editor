@@ -15,10 +15,10 @@ public class FLList {
             FLFile a = (FLFile)it.next();
             if ( a != null) {
                 if (a.get_type() == "directory") {
-                    output = output + "-----".repeat(i)+"[DIR]"+a.get_name()+"\n";
+                    output = output + "  ".repeat(i)+"↪[DIR]"+a.get_name()+"\n";
                     output = output + iteratorAction(i+1,(FLDirectory)a);
                 } else if (a.get_type() == "file") {
-                    output = output + "-----".repeat(i)+a.get_name()+"\n";
+                    output = output + "  ".repeat(i)+"↪"+a.get_name()+"\n";
                 }
             }
         }
