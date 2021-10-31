@@ -5,6 +5,5 @@ package editor.file;
 abstract class FileState {
     FileState[] states;
     abstract void save(FileContollor f); //儲存檔案
-    abstract void run(FileContollor f); //跑檔案
     abstract void close(FileContollor f); //關閉檔案
 }
