@@ -7,6 +7,9 @@ import java.awt.BorderLayout;
 import editor.visitor.*;
 import editor.TextEditor;
 
+//Observer Pattern
+//擔任Concrete Observer角色，繼承Frame
+//計算文字總數的視窗
 public class TextCounterFrame extends Frame {
 
     JLabel context = new JLabel("");

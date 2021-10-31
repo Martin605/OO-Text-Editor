@@ -8,6 +8,9 @@ import javax.swing.*;
 import editor.TextEditor;
 import editor.search.Search;
 
+//Observer Pattern
+//擔任Concrete Observer角色，繼承Frame
+//目前沒用到的class
 public class SearchFrame extends Frame {
 
     public SearchFrame(TextEditor te) {
