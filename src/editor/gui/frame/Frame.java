@@ -6,6 +6,9 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+//Observer Pattern
+//擔任Concrete Observer角色
+//小視窗模板
 public class Frame extends Editor {
 
     JLabel title;
@@ -29,12 +32,14 @@ public class Frame extends Editor {
         this.setResizable(false);
     }
 
+    //Observer Pattern override Editor的方法
     @Override
     public void update_theme(Color background, Color foreground) {
         this.getContentPane().setBackground(background);
         this.title.setForeground(foreground);
     }
 
+    //Observer Pattern override Editor的方法
     @Override
     public void update_Font(Font font) {
         this.title.setFont(font);

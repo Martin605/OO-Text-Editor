@@ -8,6 +8,9 @@ import javax.swing.text.html.HTMLEditorKit;
 
 import editor.TextEditor;
 
+//Observer Pattern
+//擔任Concrete Observer角色，繼承Frame
+//跑HTML的視窗
 public class PreviewFrame extends Frame {
 
     public PreviewFrame(TextEditor te) {

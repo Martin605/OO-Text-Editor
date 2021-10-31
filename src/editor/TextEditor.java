@@ -11,6 +11,8 @@ import editor.gui.frame.TextCounterFrame;
 import java.awt.*;
 import java.awt.event.*;
 
+//Observer Pattern
+//擔任Concrete Observer角色
 public class TextEditor extends Editor {
 
     private EditorGroup editorGroup = EditorGroup.getEditorGroup();
@@ -65,15 +67,17 @@ public class TextEditor extends Editor {
 
     }
     
+    //Observer Pattern override Editor的方法
     @Override
     public void update_theme(Color background, Color foreground) {
-        text_area.setBackground(background);
-        text_area.setForeground(foreground);
+        text_area.setBackground(background); //設定背景顏色
+        text_area.setForeground(foreground); //設定字體顏色
     }
 
+    //Observer Pattern override Editor的方法
     @Override
     public void update_Font(Font font) {
-    	text_area.setFont(font);
+    	text_area.setFont(font); //設定字體(粗體和斜體)
     }
 
     public String getText() {

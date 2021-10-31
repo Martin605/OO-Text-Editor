@@ -9,14 +9,13 @@ public class RecordEdits { //Originator
     ArrayList<Estring> edits = new ArrayList<>(); //宣告一個雙重陣列型態的物件，名稱為edits
 
 
-    public void addEdits(Estring arrayList) //將用戶在編輯器打入的字母存入edits??，會在RecorsController使用
+    public void addEdits(Estring arrayList) //將用戶在編輯器打入的字加入edits，會在RecorsController使用
     {
         edits.add(arrayList); 
         //使用陣列的add()加入打入的字母(小陣列)到edits(大陣列)
     }
 
-    public ArrayList<Estring> getEdits(ArrayList<Estring> arrayList){
-        //複製新的編輯動作，來存入在RecordCaretaker的Stack裡面
+    public ArrayList<Estring> getEdits(ArrayList<Estring> arrayList){//複製新的編輯動作，來存入在RecordCaretaker的Stack裡面
         return (ArrayList<Estring>) arrayList.clone(); 
         //用在當addEdits()執行完之後，將動作(雙重陣列)複製，並回傳
     }
