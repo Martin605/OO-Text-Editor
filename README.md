@@ -5,7 +5,7 @@ This project is used for Object-Oriented Software Engineering Teamwork.
 - 🔲Composite
 - ✔️Strategy
 - 🔲Iterator
-- 🔲Visitor
+- ✔️Visitor
 - ✔️Memento
 - ✔️Observer
 - ✔️Builder
