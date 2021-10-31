@@ -20,7 +20,7 @@ public class RecordController {
         if (!restoring) { //如果不是復原的動作
             recordedits.addEdits(EcharacterFactory.stringToCharacter(str)); 
             //使用recordedits的addEdits()將打在編輯器上的字母設定到RecordEdits Class的edits陣列(大)裡面
-            //用stringToCharacter將打入的字串轉為字元??
+            //用stringToCharacter將打入的字串轉為字元(減少占用空間)
 
             careTaker.setMemento(recordedits);
             //將動作(雙重陣列，也就是edits)存入RecordCaretaker的Stack裡面
