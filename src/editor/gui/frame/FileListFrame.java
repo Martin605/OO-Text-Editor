@@ -19,17 +19,19 @@ public class FileListFrame extends Frame {
     public FileListFrame(TextEditor te) {
         super("File List");
         this.te = te;
-
-        this.add(context, BorderLayout.CENTER);
         context.setEditable(false);
+        JScrollPane scrollPane = new JScrollPane(context);
+        this.add(scrollPane, BorderLayout.CENTER);
         this.run();
-        this.setSize(250, 100);
+        this.setSize(250, 300);
         this.setResizable(true);
         this.setVisible(true);
     }
+
     public void run() {
         this.set_text(FLList.getList(new File(te.getFileContollor().get_path()).getParent()));
     }
+    
     public void set_text(String text) {
         this.context.setText(text);
     }

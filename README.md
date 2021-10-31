@@ -2,9 +2,9 @@
 This project is used for Object-Oriented Software Engineering Teamwork.
 ## Used Pattern
 - ✔️Singleton
-- 🔲Composite
+- ✔️Composite
 - ✔️Strategy
-- 🔲Iterator
+- ✔️Iterator
 - ✔️Visitor
 - ✔️Memento
 - ✔️Observer
