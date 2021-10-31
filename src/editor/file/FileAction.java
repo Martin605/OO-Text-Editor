@@ -1,13 +1,10 @@
 package editor.file;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-
+import java.io.*;
+import java.nio.file.*;
+import java.awt.*;
 import javax.swing.JFileChooser;
+
 import editor.TextEditor;
 
 public class FileAction {
@@ -50,7 +47,7 @@ public class FileAction {
         return true;
     }
 
-    public void open(TextEditor textEditor) throws IOException {
+    public void open(TextEditor textEditor) {
         fileChooser.setDialogTitle("Select a file that you want to open"); 
         fileId = fileChooser.showOpenDialog(textEditor);
 
@@ -66,10 +63,20 @@ public class FileAction {
         try {
             content = new String (Files.readAllBytes( Paths.get(filePath) ));
             textEditor.getTextArea().setText(content);
+            textEditor.getFileContollor().setFileInfo(textEditor,"",filePath);
             return true;
         } catch (IOException e) {
             return false;
         }
+    }
+
+    public static void openOutside(String path) {
+            File file = new File(path);
+            try {
+                Desktop.getDesktop().open(file);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
     }
 
 }

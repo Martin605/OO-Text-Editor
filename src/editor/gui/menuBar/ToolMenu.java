@@ -4,13 +4,33 @@ import javax.swing.*;
 
 import editor.TextEditor;
 import editor.classList.iterator.CList;
-import editor.gui.frame.TextCounterFrame;
+import editor.gui.frame.*;
 
 import java.awt.event.ActionEvent;
 
 public class ToolMenu extends MenuItem {
     ToolMenu(TextEditor te) {
         super("Tool");
+        this.menuItem.add(
+            new JMenuItem(
+                new AbstractAction("Run"){
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        te.getFileContollor().run();
+                    }
+                }
+            )
+        );
+        this.menuItem.add(
+            new JMenuItem(
+                new AbstractAction("Preview"){
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        new PreviewFrame(te);
+                    }
+                }
+            )
+        );
         this.menuItem.add( 
             new JMenuItem(
                 new AbstractAction("Text Counter"){

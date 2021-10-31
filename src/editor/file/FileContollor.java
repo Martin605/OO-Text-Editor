@@ -19,6 +19,7 @@ public class FileContollor {
         this.textEditor = textEditor;
         this.filename = filename;
         this.path = path;
+        this.state = new Saved(this);
     }
 
     public FileState getState() {

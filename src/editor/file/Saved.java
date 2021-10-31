@@ -9,7 +9,7 @@ class Saved extends FileState {
     void save(FileContollor f) {
     };
     void run(FileContollor f) {
-        System.out.println("Run");
+        FileAction.openOutside(f.get_path());
     };
     void close(FileContollor f) {
         f.get_TextEditor().dispose();

@@ -7,7 +7,6 @@ import editor.TextEditor;
 import editor.file.FileAction;
 
 import java.awt.event.ActionEvent;
-import java.io.IOException;
 
 public class FileMenu extends MenuItem {
     FileMenu(TextEditor textEditor) {
@@ -28,10 +27,7 @@ public class FileMenu extends MenuItem {
                 new AbstractAction("Open"){
                     @Override
                     public void actionPerformed(ActionEvent e) {
-			    		try {
-                            new FileAction().open(textEditor);
-                        } catch (IOException e1) {
-                        }
+                        new FileAction().open(textEditor);
                     }
                 }
             )

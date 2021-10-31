@@ -38,7 +38,7 @@ public class EditorGroup{ //此不設定為abstract的類別，是因為我們�
     };
     public void setFont(Font font) { //設定編輯器字體大小
     	for (Editor textEditor : editorList) {
-            textEditor.setFont(font);
+            textEditor.update_Font(font);
         }
     }
 
