@@ -10,15 +10,13 @@ public class Style {
 	private String fontName;
 	private int  fontStyle;
 
-		
-		
-	public Style(int size,String fontName,int fontStyle) { //大小、字型、正常或粗體
+	//大小、字型、正常或粗體
+	public Style(int size,String fontName,int fontStyle) { 
 		this.size = size;
 		this.fontName = fontName;
-		this.fontStyle = fontStyle;
-		
-			
+		this.fontStyle = fontStyle;		
 	}
+	
 	public Font getFont() {
 		Font font = new Font(fontName,fontStyle,size);
 		return font;

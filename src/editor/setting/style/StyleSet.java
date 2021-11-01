@@ -10,7 +10,8 @@ public class StyleSet {
 		this.styleBuilder = styleBuilder;
 	}
 	
-	public Style MainStyle() { //第一種字體風格
+	public Style MainStyle() { 
+		//第一種字體風格
 		Style style = styleBuilder
 				.setsize(12)
 				.setFontName("TimesRoman")
@@ -18,7 +19,8 @@ public class StyleSet {
 				.build();
 		return style;
 	}
-	public Style NoteStyle() { //第一種字體風格
+	public Style NoteStyle() { 
+		//第一種字體風格
 		Style style = styleBuilder
 				.setsize(18)
 				.setFontName("Dialog")

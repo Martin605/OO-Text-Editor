@@ -6,16 +6,19 @@ import editor.file.fileList.*;
 //Iterator Pattern
 public class Repository implements FLContainer {
 
-    List<FLFile> fileList = new ArrayList<FLFile>();
     //新增一個陣列類別為FLFile名字為fileList
+    private List<FLFile> fileList = new ArrayList<FLFile>();
 
-    Repository(FLDirectory dir) { //Repository方法 FLDirectory取名為dir
-        this.fileList = dir.get_item();//設定陣列 內容為文件夾的物件
+    Repository(FLDirectory dir) { 
+        //Repository方法 FLDirectory取名為dir
+        //設定陣列 內容為文件夾的物件
+        this.fileList = dir.get_item();
     }
 
     @Override
     public FLIterator getIterator() {
-        return new SFLIterator();//回傳新的SFLIterator方法
+        //回傳新的SFLIterator方法
+        return new SFLIterator();
     }
 
     private class SFLIterator implements FLIterator {
@@ -23,7 +26,8 @@ public class Repository implements FLContainer {
 
         @Override
         public boolean hasNext() {
-            if(i<fileList.size())//陣列長度判斷有沒有下一個
+            //陣列長度判斷有沒有下一個
+            if(i<fileList.size())
             {
                 return true;
             }
@@ -32,7 +36,8 @@ public class Repository implements FLContainer {
 
         @Override
         public Object next(){
-            if(this.hasNext())//回傳陣列目前位置
+            //回傳陣列目前位置
+            if(this.hasNext())
             {
                 return fileList.get(i++);
             }

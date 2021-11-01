@@ -9,7 +9,5 @@ public class TextArea extends JTextPane {
     public TextArea() {
         super();
         this.setFont(new Font("Dialog", Font.PLAIN , 16));
-        //this.setLineWrap(true);
-        //this.setWrapStyleWord(true);
     }
 }

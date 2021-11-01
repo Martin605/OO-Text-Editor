@@ -10,8 +10,8 @@ import editor.file.fileList.iterator.FLList;
 
 public class FileListFrame extends Frame {
 
-    JTextArea context = new JTextArea("");
-    TextEditor te;
+    private JTextArea context = new JTextArea("");
+    private TextEditor te;
 
     public FileListFrame(TextEditor te) {
         super("File List");
@@ -26,7 +26,13 @@ public class FileListFrame extends Frame {
     }
 
     public void run() {
-        this.set_text(FLList.getList(new File(te.getFileContollor().get_path()).getParent()));
+        this.set_text(
+            FLList.getList(
+                new File(
+                    te.getFileContollor().get_path()
+                ).getParent()
+            )
+        );
     }
 
     public void set_text(String text) {

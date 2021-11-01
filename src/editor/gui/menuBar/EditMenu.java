@@ -15,7 +15,8 @@ public class EditMenu extends MenuItem {
                 new AbstractAction("Undo"){
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        te.getRecordController().restore(); //用戶想要復原
+                        //用戶想要復原
+                        te.getRecordController().restore(); 
                     }
                 }
             )

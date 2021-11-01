@@ -4,6 +4,5 @@ import editor.TextEditor;
 
 // Visitor
 public interface Visitor {
-	int visit(TextEditor textEditor);
-	
+	public int visit(TextEditor textEditor);
 }

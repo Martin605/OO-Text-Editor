@@ -11,7 +11,7 @@ import javax.swing.*;
 //小視窗模板
 public class Frame extends Editor {
 
-    JLabel title;
+    private JLabel title;
 
     Frame(String name) {
         super(name);

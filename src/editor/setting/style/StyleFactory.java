@@ -26,7 +26,8 @@ public class StyleFactory extends StyleBuilder{
 	
 	
 	@Override
-	public Style build() { //創造並回傳設定好的大小、字型、正常或粗體
+	public Style build() { 
+		//創造並回傳設定好的大小、字型、正常或粗體
 		return new Style(size,fontName,fontStyle);
 	}
 }

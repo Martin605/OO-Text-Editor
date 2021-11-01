@@ -12,9 +12,9 @@ import editor.TextEditor;
 //計算文字總數的視窗
 public class TextCounterFrame extends Frame {
 
-    JLabel context = new JLabel("");
-    TextEditor te;
-    TextEditorVisitor textEditorVisitor = new TextEditorVisitor();
+    private JLabel context = new JLabel("");
+    private TextEditor te;
+    private TextEditorVisitor teVisitor = new TextEditorVisitor();
 
     public TextCounterFrame(TextEditor te) {
         super("Text Counter");
@@ -29,7 +29,7 @@ public class TextCounterFrame extends Frame {
     }
 
     public void run_count() {
-        this.set_count(te.accept(textEditorVisitor));
+        this.set_count(te.accept(teVisitor));
     }
 
     public void set_count(int count) {

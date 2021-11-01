@@ -8,6 +8,9 @@ import editor.EditorGroup;
 public class LightGray implements Theme { 
     @Override 
     public void setTheme(){ 
-        new EditorGroup().setTheme(new Color(80, 80, 80),new Color(255, 250, 250));
+        new EditorGroup().setTheme(
+            new Color(80, 80, 80),
+            new Color(255, 250, 250)
+        );
     } 
 }

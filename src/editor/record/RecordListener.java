@@ -7,9 +7,10 @@ import editor.TextEditor;
 
 
 //文字編輯器會使用
-public class RecordListener implements DocumentListener{ //繼承JAVA套件的DocumentListener
+//繼承JAVA套件的DocumentListener
+public class RecordListener implements DocumentListener{ 
 
-    TextEditor te; //宣告一個TextEditor的變數te
+    private TextEditor te; //宣告一個TextEditor的變數te
 
     public RecordListener(TextEditor te) { 
         this.te = te;
@@ -23,7 +24,7 @@ public class RecordListener implements DocumentListener{ //繼承JAVA套件的Do
 
     @Override
     public void removeUpdate(DocumentEvent e) {
-        // this.toRecord(e);
+        this.toRecord(e);
     }
 
     @Override
