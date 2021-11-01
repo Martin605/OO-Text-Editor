@@ -14,7 +14,7 @@ public class TextCounterFrame extends Frame {
 
     JLabel context = new JLabel("");
     TextEditor te;
-    Comparison a = new Comparison();
+    TextEditorVisitor textEditorVisitor = new TextEditorVisitor();
 
     public TextCounterFrame(TextEditor te) {
         super("Text Counter");
@@ -29,8 +29,7 @@ public class TextCounterFrame extends Frame {
     }
 
     public void run_count() {
-        a.Visitor(te.getText());
-        this.set_count(a.getSum());
+        this.set_count(te.accept(textEditorVisitor));
     }
 
     public void set_count(int count) {

@@ -1,4 +1,9 @@
 package editor.visitor;
+
+import editor.TextEditor;
+
+// Visitor
 public interface Visitor {
-	void Visitor(String p);
+	int visit(TextEditor textEditor);
+	
 }

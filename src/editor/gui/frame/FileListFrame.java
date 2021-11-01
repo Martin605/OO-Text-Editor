@@ -1,12 +1,10 @@
 package editor.gui.frame;
 
 import javax.swing.*;
-import javax.swing.text.JTextComponent;
 
 import java.awt.*;
 import java.io.File;
 
-import editor.visitor.*;
 import editor.TextEditor;
 import editor.file.fileList.iterator.FLList;
 
@@ -14,7 +12,6 @@ public class FileListFrame extends Frame {
 
     JTextArea context = new JTextArea("");
     TextEditor te;
-    Comparison a = new Comparison();
 
     public FileListFrame(TextEditor te) {
         super("File List");

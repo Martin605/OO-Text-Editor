@@ -4,16 +4,19 @@ import javax.swing.*;
 
 import editor.gui.menuBar.MenuBar;
 import editor.record.*;
+import editor.visitor.Visitor;
 import editor.file.FileContollor;
 import editor.gui.body.TextArea;
 import editor.gui.frame.TextCounterFrame;
+import editor.visitor.Visitable;
 
 import java.awt.*;
 import java.awt.event.*;
 
 //Observer Pattern
 //擔任Concrete Observer角色
-public class TextEditor extends Editor {
+//Visitor pattern(Concrete class)
+public class TextEditor extends Editor implements Visitable {
 
     private EditorGroup editorGroup = EditorGroup.getEditorGroup();
     private FileContollor fileContollor;
@@ -127,6 +130,10 @@ public class TextEditor extends Editor {
             this.textCounter.dispose();
         }
         this.textCounter = textCounterFrame;
+    }
+
+    public int accept(Visitor visitor) { 
+        return visitor.visit(this); 
     }
   
 }

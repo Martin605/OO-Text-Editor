@@ -1,6 +1,7 @@
 package editor;
 
 import java.awt.*;
+
 import javax.swing.*;
 
 //Observer Pattern
