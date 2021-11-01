@@ -3,6 +3,7 @@ package editor.file.fileList.iterator;
 import java.util.*;
 import editor.file.fileList.*;
 
+//Iterator Pattern
 public class Repository implements FLContainer {
 
     List<FLFile> fileList = new ArrayList<FLFile>();
