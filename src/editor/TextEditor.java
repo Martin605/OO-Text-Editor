@@ -17,6 +17,7 @@ import java.awt.event.*;
 //擔任Concrete Observer角色
 //Visitor pattern(Concrete class)
 public class TextEditor extends Editor implements Visitable {
+    //繼承Editor，再implement visitable interface
 
     private EditorGroup editorGroup = EditorGroup.getEditorGroup();
     private FileContollor fileContollor;
