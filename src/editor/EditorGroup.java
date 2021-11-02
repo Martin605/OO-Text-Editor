@@ -11,7 +11,6 @@ import java.util.ArrayList;
 //其他視窗也會更動
 //此不設定為abstract的類別，
 //是因為我們目前不需要有concrete類別
-// visitor pattern [Client]
 public class EditorGroup{ 
 
     // Singleton Pattern (only can new one EditorGroup)

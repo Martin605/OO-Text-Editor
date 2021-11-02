@@ -15,7 +15,7 @@ import java.awt.event.*;
 
 //Observer Pattern
 //擔任Concrete Observer角色
-//Visitor pattern(Concrete class)
+//Visitor pattern(Client class)
 public class TextEditor extends Editor implements Visitable {
     //繼承Editor，再implement visitable interface
 
@@ -133,8 +133,10 @@ public class TextEditor extends Editor implements Visitable {
         this.textCounter = textCounterFrame;
     }
 
+    //Visitor Pattern (implements Visitable interface)
     public int accept(Visitor visitor) { 
         return visitor.visit(this); 
     }
+    //讓TextEditor接受Visitor，造訪他，並來回傳他自己
   
 }
