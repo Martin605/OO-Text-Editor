@@ -29,12 +29,12 @@ public class RecordController {
         if (!restoring) { 
 
             recordedits.addEdits(EcharacterFactory.stringToCharacter(str)); 
-            //使用recordedits的addEdits()將打在編輯器上的字母設定到
-            //RecordEdits Class的edits陣列(大)裡面
+            //使用recordedits的addEdits()將打在編輯器上的內容加到
+            //RecordEdits Class的edits陣列後面
             //用stringToCharacter將打入的字串轉為字元(減少占用空間)
 
             careTaker.setMemento(recordedits);
-            //將動作(雙重陣列，也就是edits)存入RecordCaretaker的Stack裡面
+            //將動作(edits)存入RecordCaretaker的Stack裡面
         }
     }
 
@@ -51,7 +51,7 @@ public class RecordController {
                     recordedits.getEdit()
                 )
             );
-            //利用recordedits的getEdit取得edits(雙重陣列，上一步的動作)
+            //利用recordedits的getEdit取得edits(上一步的動作)
             //利用texteditor的setText()將取得的上一步的動作，
             //利用arrayListToString()來將傳回的陣列轉為字串
 
