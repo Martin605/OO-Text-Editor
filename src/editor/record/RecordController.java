@@ -53,7 +53,6 @@ public class RecordController {
             );
             //利用recordedits的getEdit取得edits(雙重陣列，上一步的動作)
             //利用texteditor的setText()將取得的上一步的動作，
-            //設定回去編輯器的頁面??
             //利用arrayListToString()來將傳回的陣列轉為字串
 
         } else { //如果是空的
