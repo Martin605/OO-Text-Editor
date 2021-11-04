@@ -14,6 +14,8 @@ public class ThemeEditor {
     //宣告一個Theme的變數theme
     private static Theme theme; 
 
+    private ThemeEditor() {};
+
     public static ThemeEditor getThemeEditor() {
         return uniqueThemeEditor;
     }

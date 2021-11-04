@@ -11,7 +11,7 @@ public class ThemeMenu extends MenuItem {
 
     ThemeMenu() {
         super("Theme");
-        ThemeEditor themeEditor = new ThemeEditor();
+        ThemeEditor themeEditor = ThemeEditor.getThemeEditor();
         this.menuItem.add( 
             new JMenuItem(
                 new AbstractAction("Light"){

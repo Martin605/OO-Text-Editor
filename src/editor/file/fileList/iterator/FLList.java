@@ -11,7 +11,7 @@ public class FLList {
 
     public static String iteratorAction(int i,FLDirectory o) {
         //建立一個Repository資料夾物件
-        Repository cRepository = new Repository(o);
+        FLContainer cRepository = new Repository(o);
         String output = "";
 
         //FLIterator取名為it cRepository的getIterator方法 
