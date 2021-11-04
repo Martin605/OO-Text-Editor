@@ -21,7 +21,7 @@ public class StyleMenu extends MenuItem {
 	                    @Override
 	                    public void actionPerformed(ActionEvent e) {
 	                    	Style style1 = styleset.MainStyle();
-	                    	new EditorGroup().setFont(style1.getFont());
+	                    	EditorGroup.getEditorGroup().setFont(style1.getFont());
 	                    }
 	                }
 	            )
@@ -32,7 +32,7 @@ public class StyleMenu extends MenuItem {
 	                    @Override
 	                    public void actionPerformed(ActionEvent e) {
 	                    	Style style2 = styleset.NoteStyle();
-	                    	new EditorGroup().setFont(style2.getFont());
+	                    	EditorGroup.getEditorGroup().setFont(style2.getFont());
 	                    }
 	                }
 	            )

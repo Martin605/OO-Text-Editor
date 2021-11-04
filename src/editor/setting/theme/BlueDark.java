@@ -8,7 +8,7 @@ import editor.EditorGroup;
 public class BlueDark implements Theme { 
     @Override 
     public void setTheme(){ 
-        new EditorGroup().setTheme(
+        EditorGroup.getEditorGroup().setTheme(
             new Color(12, 26, 39),
             new Color(255, 255, 204)
         );

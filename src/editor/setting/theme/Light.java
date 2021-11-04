@@ -10,7 +10,7 @@ public class Light implements Theme {
     //override在Theme class的setTheme()
     @Override 
     public void setTheme(){ 
-        new EditorGroup().setTheme(
+        EditorGroup.getEditorGroup().setTheme(
             new Color(255,255,255), 
             new Color(0,0,0)
         );

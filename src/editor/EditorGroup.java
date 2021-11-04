@@ -19,7 +19,9 @@ public class EditorGroup{
     //獨立唯一的編輯視窗組，確保都是從這裡來更新
 
     // Observer Pattern (list)
-    private static ArrayList<Editor> editorList = new ArrayList<Editor>();
+    private ArrayList<Editor> editorList = new ArrayList<Editor>();
+
+    private EditorGroup() {}
 
     public static EditorGroup getEditorGroup() { 
         //取得編輯視窗組

@@ -8,7 +8,7 @@ import editor.EditorGroup;
 public class Dark implements Theme { 
     @Override 
     public void setTheme(){ 
-        new EditorGroup().setTheme(
+        EditorGroup.getEditorGroup().setTheme(
             new Color(0,0,0),
             new Color(255,255,255)
         );
