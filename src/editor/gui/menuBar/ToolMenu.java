@@ -8,14 +8,14 @@ import editor.gui.frame.*;
 import java.awt.event.ActionEvent;
 
 public class ToolMenu extends MenuItem {
-    ToolMenu(TextEditor te) {
+    ToolMenu(TextEditor textEditor) {
         super("Tool");
         this.menuItem.add(
             new JMenuItem(
                 new AbstractAction("Preview (HTML)"){
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        new PreviewFrame(te);
+                        new PreviewFrame(textEditor);
                     }
                 }
             )
@@ -25,7 +25,7 @@ public class ToolMenu extends MenuItem {
                 new AbstractAction("Text Counter"){
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        new TextCounterFrame(te);
+                        new TextCounterFrame(textEditor);
                     }
                 }
             )
@@ -35,7 +35,7 @@ public class ToolMenu extends MenuItem {
                 new AbstractAction("Get File List"){
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        new FileListFrame(te);
+                        new FileListFrame(textEditor);
                     }
                 }
             )
