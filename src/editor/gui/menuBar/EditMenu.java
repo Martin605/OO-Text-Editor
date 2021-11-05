@@ -8,7 +8,7 @@ import editor.gui.frame.*;
 import java.awt.event.ActionEvent;
 
 public class EditMenu extends MenuItem {
-    EditMenu(TextEditor te) {
+    EditMenu(TextEditor textEditor) {
         super("Edit");
         this.menuItem.add(
             new JMenuItem(
@@ -16,7 +16,7 @@ public class EditMenu extends MenuItem {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         //用戶想要復原
-                        te.getRecordController().restore(); 
+                        textEditor.getRecordController().restore(); 
                     }
                 }
             )
@@ -27,7 +27,7 @@ public class EditMenu extends MenuItem {
                 new AbstractAction("cut"){
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        te.getTextArea().cut();
+                        textEditor.getTextArea().cut();
                     }
                 }
             )
@@ -37,7 +37,7 @@ public class EditMenu extends MenuItem {
                 new AbstractAction("copy"){
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        te.getTextArea().copy();
+                        textEditor.getTextArea().copy();
                     }
                 }
             )
@@ -47,7 +47,7 @@ public class EditMenu extends MenuItem {
                 new AbstractAction("paste"){
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        te.getTextArea().paste();
+                        textEditor.getTextArea().paste();
                     }
                 }
             )
