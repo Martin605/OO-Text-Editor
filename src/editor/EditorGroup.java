@@ -55,9 +55,9 @@ public class EditorGroup{
         }
     }
 
-    public void createEditor() { 
-        //建立新的編輯視窗
-        new TextEditor();
-    }
+    // public void createEditor() { 
+    //     //建立新的編輯視窗
+    //     new TextEditor();
+    // }
 
 } 

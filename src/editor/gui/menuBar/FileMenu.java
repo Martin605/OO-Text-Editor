@@ -17,7 +17,7 @@ public class FileMenu extends MenuItem {
                 new AbstractAction("New Window"){
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        EditorGroup.getEditorGroup().createEditor();
+                        new TextEditor();
                     }
                 }
             )
