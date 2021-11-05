@@ -16,6 +16,6 @@ public class Light implements Theme {
         );
         //使用EditorGroup class中的setTheme()
         //來設定整個文字編輯器的背景和字體顏色
-        //new EditorGroup來設定
+
     } 
 } 

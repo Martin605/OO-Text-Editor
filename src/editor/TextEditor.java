@@ -15,7 +15,7 @@ import java.awt.event.*;
 
 //Observer Pattern
 //擔任Concrete Observer角色
-//Visitor pattern(Client class)
+//Visitor pattern(Component class)
 public class TextEditor extends Editor implements Visitable {
     //繼承Editor，再implement visitable interface
 

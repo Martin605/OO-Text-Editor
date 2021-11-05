@@ -10,7 +10,7 @@ public class Repository implements FLContainer {
     private List<FLFile> fileList = new ArrayList<FLFile>();
 
     Repository(FLDirectory dir) { 
-        //Repository方法 FLDirectory取名為dir
+        //建構值 FLDirectory取名為dir
         //設定陣列 內容為文件夾的物件
         this.fileList = dir.get_item();
     }

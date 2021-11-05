@@ -9,7 +9,7 @@ public class ThemeEditor {
     // Singleton Pattern (only can new one ThemeEditor) 
     private static ThemeEditor uniqueThemeEditor = new ThemeEditor(); 
     //建立一個ThemeEditor的物件uniqueThemeEditor，
-    //獨立唯一的主題編輯器，確保都是從這裡來設定主題?
+    //獨立唯一的主題編輯器，確保都是從這裡來設定主題
 
     //宣告一個Theme的變數theme
     private static Theme theme; 
