@@ -20,7 +20,7 @@ public class StyleSet {
 		return style;
 	}
 	public Style NoteStyle() { 
-		//第一種字體風格
+		//第二種字體風格
 		Style style = styleBuilder
 				.setsize(18)
 				.setFontName("Dialog")
