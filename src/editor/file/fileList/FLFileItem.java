@@ -15,6 +15,7 @@ public class FLFileItem implements FLFile {
         File file = new File(path);
         
         this.path = path;
+        
         //設定name為檔案名稱
         this.name = file.getName();
     }

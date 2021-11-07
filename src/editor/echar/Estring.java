@@ -5,7 +5,7 @@ import java.util.ArrayList;
 //Flyweight Pattern
 //Concrete Flyweight
 public class Estring implements Echaracter {
-    //外在狀態? 問助教或老師
+
     private final ArrayList<Echaracter> str; 
 
     //把輸入的連續動作(字母)，儲存進Array陣列裡

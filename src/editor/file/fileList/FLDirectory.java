@@ -9,14 +9,15 @@ public class FLDirectory implements FLFile {
 
     private String name;
     private String path;
-    private ArrayList<FLFile> item = new ArrayList<FLFile>(); //儲存多個檔案
+    private ArrayList<FLFile> item = new ArrayList<FLFile>(); //儲存FLFile物件
 
     public FLDirectory(String path) {
         File folder = new File(path);
-        //為了使用File的getName()(File為JAVA內建)，
-        //來取得資料夾名稱
 
         this.path = path;
+
+        //使用File的getName()(File為JAVA內建)，
+        //來取得資料夾名稱
         //設定name為資料夾名稱
         this.name = folder.getName();
         
@@ -24,7 +25,7 @@ public class FLDirectory implements FLFile {
         for (final File fileItem : folder.listFiles()) { 
             //如果是資料夾
             if (fileItem.isDirectory()) { 
-                //建立一個資料夾類型，利用getPath()取得資料夾路徑，
+                //利用getPath()取得資料夾路徑，
                 //並new一個FLDirectory物件
                 //利用add()將之加入陣列裡
                 this.item.add(new FLDirectory(fileItem.getPath()));
