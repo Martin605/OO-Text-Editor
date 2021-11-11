@@ -42,9 +42,9 @@ public class EcharacterFactory{
         return new Estring(wordChar);
     }
 
-    //將字元變回String
+    //將Array(Estring)變回String
     public static String arrayListToString(Estring word){ 
-        return word.getCharacter();
+        return word.getCharacter(); //這是用Estring的getCharacter()
     }
 
 }
