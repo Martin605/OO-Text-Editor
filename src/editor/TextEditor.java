@@ -8,6 +8,7 @@ import editor.visitor.Visitor;
 import editor.file.FileContollor;
 import editor.gui.body.TextArea;
 import editor.gui.frame.TextCounterFrame;
+import editor.gui.frame.VocabularyCounterFrame;
 import editor.visitor.Visitable;
 
 import java.awt.*;
@@ -24,6 +25,7 @@ public class TextEditor extends Editor implements Visitable {
     private JTextPane text_area = new TextArea();
     private RecordController recordController;
     private TextCounterFrame textCounter;
+    private VocabularyCounterFrame vocabularyCounter;
 
     public TextEditor() {
         super("OO Text Editor");
@@ -124,6 +126,9 @@ public class TextEditor extends Editor implements Visitable {
         if (this.textCounter != null) {
             this.textCounter.run_count();
         }
+        if (this.vocabularyCounter != null) {
+            this.vocabularyCounter.run_count();
+        }
     }
 
     public void setTextCounter(TextCounterFrame textCounterFrame) {
@@ -131,6 +136,13 @@ public class TextEditor extends Editor implements Visitable {
             this.textCounter.dispose();
         }
         this.textCounter = textCounterFrame;
+    }
+
+    public void setVocabularyCounter(VocabularyCounterFrame vocabularyCounterFrame) {
+        if (this.vocabularyCounter != null) {
+            this.vocabularyCounter.dispose();
+        }
+        this.vocabularyCounter = vocabularyCounterFrame;
     }
 
     //Visitor Pattern (implements Visitable interface)

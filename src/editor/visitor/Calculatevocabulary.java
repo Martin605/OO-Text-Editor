@@ -10,16 +10,20 @@ import editor.TextEditor;
 public class Calculatevocabulary implements Visitor {
 	@Override
 	public int visit(TextEditor textEditor) {
-   	
-        final Scanner scan = new Scanner(textEditor.getText());
-        final String s = scan.nextLine();
-        final Pattern pattern = Pattern.compile("([A-Za-z]+)");
-        final Matcher matcher = pattern.matcher(s);
-        final ArrayList<String> wordsList = new ArrayList<>();
-        
-        while (matcher.find()) {
-            wordsList.add(matcher.group(1));
+        try {
+            final Scanner scan = new Scanner(textEditor.getText());
+            final String s = scan.nextLine();
+            final Pattern pattern = Pattern.compile("([A-Za-z]+)");
+            final Matcher matcher = pattern.matcher(s);
+            final ArrayList<String> wordsList = new ArrayList<>();
+            
+            while (matcher.find()) {
+                wordsList.add(matcher.group(1));
+            }
+            return wordsList.size();
+        } catch (Exception e) {
+            return 0;
         }
-        return wordsList.size();
+
     }
 }

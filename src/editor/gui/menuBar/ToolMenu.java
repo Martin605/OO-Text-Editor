@@ -30,6 +30,16 @@ public class ToolMenu extends MenuItem {
                 }
             )
         );
+        this.menuItem.add( 
+            new JMenuItem(
+                new AbstractAction("Vocabulary Counter"){
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        new VocabularyCounterFrame(textEditor);
+                    }
+                }
+            )
+        );
         this.menuItem.add(
             new JMenuItem(
                 new AbstractAction("Get File List"){
