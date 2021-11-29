@@ -3,6 +3,7 @@ package editor;
 import java.awt.*;
 import java.util.ArrayList;
 
+import editor.setting.theme.*;
 
 //Observer Pattern，同時也有Singleton Pattern
 //擔任Observer Pattern中的Subject角色
@@ -15,6 +16,7 @@ public class EditorGroup{
 
     // Singleton Pattern (only can new one EditorGroup)
     private static EditorGroup uniqueEditorGroup = new EditorGroup();
+    private static Theme theme; 
     //建立一個EditorGroup的物件uniqueEditorGroup，
     //獨立唯一的編輯視窗組，確保都是從這裡來更新
 
@@ -55,9 +57,20 @@ public class EditorGroup{
         }
     }
 
-    // public void createEditor() { 
-    //     //建立新的編輯視窗
-    //     new TextEditor();
-    // }
+    // Strategy 
+    public void changeTheme() {
+        //如果theme是空值，也就是沒有任何設定
+        if (theme == null) { 
+            //則預設為第一種樣式
+            theme = new Light(); 
+        }
+        //將樣式設定進theme
+        theme.setTheme(); 
+    }
+    
+    public void choiceTheme(Theme format) { 
+        // 選擇佈景主題
+        theme = format; 
+    } 
 
 } 

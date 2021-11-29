@@ -70,7 +70,7 @@ public class TextEditor extends Editor implements Visitable {
         });
         this.setSize(900, 600);
         this.setVisible(true);
-
+        
     }
     
     //Observer Pattern override Editor的方法

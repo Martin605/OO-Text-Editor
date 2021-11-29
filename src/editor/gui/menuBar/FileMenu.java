@@ -2,7 +2,6 @@ package editor.gui.menuBar;
 
 import javax.swing.*;
 
-import editor.EditorGroup;
 import editor.TextEditor;
 import editor.file.FileAction;
 

@@ -2,23 +2,24 @@ package editor.gui.menuBar;
 
 import java.awt.event.ActionEvent;
 import javax.swing.*;
-import editor.setting.ThemeEditor;
+
+import editor.EditorGroup;
 import editor.setting.theme.*;
 
 public class ThemeMenu extends MenuItem {
 
-    ThemeEditor themeEditor;
+    EditorGroup editorGroup;
 
     ThemeMenu() {
         super("Theme");
-        ThemeEditor themeEditor = ThemeEditor.getThemeEditor();
+        EditorGroup editorGroup = EditorGroup.getEditorGroup();
         this.menuItem.add( 
             new JMenuItem(
                 new AbstractAction("Light"){
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        themeEditor.ChoiceTheme(new Light());
-                        themeEditor.change();
+                        editorGroup.choiceTheme(new Light());
+                        editorGroup.changeTheme();
                     }
                 }
             )
@@ -28,8 +29,8 @@ public class ThemeMenu extends MenuItem {
                 new AbstractAction("Dark"){
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        themeEditor.ChoiceTheme(new Dark());
-                        themeEditor.change();
+                        editorGroup.choiceTheme(new Dark());
+                        editorGroup.changeTheme();
                     }
                 }
             )
@@ -39,8 +40,8 @@ public class ThemeMenu extends MenuItem {
                 new AbstractAction("Light Gray"){
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        themeEditor.ChoiceTheme(new LightGray());
-                        themeEditor.change();
+                        editorGroup.choiceTheme(new LightGray());
+                        editorGroup.changeTheme();
                     }
                 }
             )
@@ -50,8 +51,8 @@ public class ThemeMenu extends MenuItem {
                 new AbstractAction("Dark Gray"){
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        themeEditor.ChoiceTheme(new DarkGray());
-                        themeEditor.change();
+                        editorGroup.choiceTheme(new DarkGray());
+                        editorGroup.changeTheme();
                     }
                 }
             )
@@ -61,8 +62,8 @@ public class ThemeMenu extends MenuItem {
                 new AbstractAction("BlueDark"){
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        themeEditor.ChoiceTheme(new BlueDark());
-                        themeEditor.change();
+                        editorGroup.choiceTheme(new BlueDark());
+                        editorGroup.changeTheme();
                     }
                 }
             )

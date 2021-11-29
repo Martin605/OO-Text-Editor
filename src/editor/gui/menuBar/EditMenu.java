@@ -3,7 +3,6 @@ package editor.gui.menuBar;
 import javax.swing.*;
 
 import editor.TextEditor;
-import editor.gui.frame.*;
 
 import java.awt.event.ActionEvent;
 
