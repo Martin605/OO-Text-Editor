@@ -4,6 +4,7 @@ import javax.swing.*;
 
 import editor.TextEditor;
 import editor.gui.frame.*;
+import editor.sign.*;
 
 import java.awt.event.ActionEvent;
 
@@ -46,6 +47,19 @@ public class ToolMenu extends MenuItem {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         new FileListFrame(textEditor);
+                    }
+                }
+            )
+        );
+        this.menuItem.add(
+            new JMenuItem(
+                new AbstractAction("Add Sign"){
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        Sign ss = new SampleSign(
+                            textEditor, "鄭晨樺\n學生\n資訊管理系", 
+                            new AddSignAtEnd());
+                        ss.add();
                     }
                 }
             )
