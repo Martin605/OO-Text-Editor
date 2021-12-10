@@ -4,6 +4,7 @@ import java.awt.*;
 import java.util.ArrayList;
 
 import editor.setting.theme.*;
+import editor.setting.Setting;
 
 //Observer Pattern，同時也有Singleton Pattern
 //擔任Observer Pattern中的Subject角色
@@ -22,12 +23,17 @@ public class EditorGroup{
 
     // Observer Pattern (list)
     private ArrayList<Editor> editorList = new ArrayList<Editor>();
+    private Setting setting = new Setting();
 
     private EditorGroup() {}
 
     public static EditorGroup getEditorGroup() { 
         //取得編輯視窗組
         return uniqueEditorGroup;
+    }
+
+    public Setting getSetting() { 
+        return this.setting;
     }
 
     public void addEditor(Editor textEditor){ 
