@@ -8,6 +8,6 @@ import editor.TextEditor;
 public class AddSignAtStart implements AddSignAPI {
     public void add(TextEditor te, String name) {
         JTextPane tp = te.getTextArea();
-        tp.setText(name+"\n"+tp.getText());
+        tp.setText("Dear "+name+",\n"+tp.getText());
     }; 
 }
