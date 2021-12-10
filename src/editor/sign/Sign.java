@@ -4,10 +4,12 @@ package editor.sign;
 public abstract class Sign {
     protected AddSignAPI addSign;
 
+    // set Sign api
     protected Sign(AddSignAPI addSign){       
         this.addSign = addSign;    
     }
 
+    // add Sign
     public abstract void add();
 
 }

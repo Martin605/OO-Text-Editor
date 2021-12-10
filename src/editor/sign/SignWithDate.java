@@ -11,12 +11,14 @@ public class SignWithDate extends Sign {
     private TextEditor textEditor;
     private String name;
 
+    // setup Sign api
     public SignWithDate(TextEditor textEditor, String name, AddSignAPI addSign){       
         super(addSign);    
         this.textEditor = textEditor;
         this.name = name;
     }
-
+    
+    // add Sign
     public void add() {
         SimpleDateFormat sdf = new SimpleDateFormat("d MMMMM, yyyy", Locale.ENGLISH);
         addSign.add(this.textEditor, this.name + "\n" + sdf.format(new Date()));
