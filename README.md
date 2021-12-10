@@ -11,4 +11,4 @@ This project is used for Object-Oriented Software Engineering Teamwork.
 - ✔️Builder
 - ✔️Flyweight
 - ✔️Stat
- 
+- ✔️Bridge
