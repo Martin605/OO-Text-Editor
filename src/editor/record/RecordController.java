@@ -4,7 +4,7 @@ import editor.echar.EcharacterFactory;
 
 //Memento Pattern
 //用來控制復原編輯(回到上一步)的動作
-public class RecordController {
+public class RecordController implements Cloneable {
 
     //宣告一個Texteditor的變數，名稱為texteditor
     private TextEditor texteditor; 
@@ -61,5 +61,9 @@ public class RecordController {
         }
         restoring = false; //復原後再將此設為不是復原的動作
     }
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+		return super.clone();
+	} 
 
 }

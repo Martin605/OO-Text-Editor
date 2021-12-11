@@ -51,6 +51,21 @@ public class FileMenu extends MenuItem {
                 }
             )
         );
+        this.menuItem.add(  
+                new JMenuItem(
+                    new AbstractAction("Open As New Windo"){
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+                        	try {
+                        		TextEditor a = (TextEditor) textEditor.clone();                         
+                        	} catch(CloneNotSupportedException a) {
+                        		a.printStackTrace();
+                        	}
+                        	
+                        }
+                    }
+                )
+            );
         this.addToThis();
     }
 }

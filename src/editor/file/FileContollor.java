@@ -4,7 +4,7 @@ import editor.TextEditor;
 
 //State Patten
 //擔任Subject的角色
-public class FileContollor {
+public class FileContollor implements Cloneable{
 
     private String filename = "";
     private String path = "";
@@ -67,5 +67,9 @@ public class FileContollor {
     public TextEditor get_TextEditor() { 
         return this.textEditor;
     }
+	@Override
+	public Object clone() throws CloneNotSupportedException {
+		return super.clone();
+	} 
 
 }
