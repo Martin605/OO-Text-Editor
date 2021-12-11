@@ -150,14 +150,15 @@ public class TextEditor extends Editor implements Visitable,Cloneable  {
         return visitor.visit(this); 
     }
     //讓TextEditor接受Visitor，造訪他，並來回傳他自己
+  
 	@Override
-	public Object clone() throws CloneNotSupportedException {
+	public Object clone() throws CloneNotSupportedException {//建立新TextEditor
 		   TextEditor a = new TextEditor(); 
-		   a.fileContollor =(FileContollor)fileContollor.clone();
-		   a.text_area.setText(text_area.getText());
-		   a.recordController=(RecordController)recordController.clone();
-		   a.textCounter=null;
-		   a.vocabularyCounter=null;
+		   a.fileContollor =(FileContollor)fileContollor.clone();//複製fileContollor
+		   a.text_area.setText(text_area.getText());//複製text_area
+		   a.recordController=(RecordController)recordController.clone();//複製recordController
+		   a.textCounter=null;//設定空值
+		   a.vocabularyCounter=null;//設定空值
 		return  a;
 	} 
 }
