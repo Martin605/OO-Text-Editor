@@ -53,7 +53,7 @@ public class FileMenu extends MenuItem {
         );
         this.menuItem.add(  
                 new JMenuItem(
-                    new AbstractAction("Open As New Windo"){
+                    new AbstractAction("Open As New Window"){
                         @Override
                         public void actionPerformed(ActionEvent e) {
                         	try {

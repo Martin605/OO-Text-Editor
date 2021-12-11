@@ -61,9 +61,16 @@ public class RecordController implements Cloneable {
         }
         restoring = false; //復原後再將此設為不是復原的動作
     }
+    public void set_TextEditor(TextEditor texteditor) {
+        this.texteditor = texteditor;
+    }
+
     @Override
     public Object clone() throws CloneNotSupportedException {
-		return super.clone();
+        RecordController rc = (RecordController) super.clone();
+        rc.careTaker = (RecordCaretaker) careTaker.clone();
+        rc.recordedits = (RecordEdits) recordedits.clone();
+		return rc;
 	} 
 
 }

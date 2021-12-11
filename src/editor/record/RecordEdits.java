@@ -5,7 +5,7 @@ import editor.echar.Estring;
 
 //Memento Pattern
 //擔任Originator的角色
-public class RecordEdits { //Originator
+public class RecordEdits implements Cloneable { //Originator
     //宣告一個陣列型態的物件，名稱為edits
     private ArrayList<Estring> edits = new ArrayList<>(); 
 
@@ -51,4 +51,10 @@ public class RecordEdits { //Originator
         //size()-1是拿最後一個，因size是回傳有多少個，所以須減1
     }
 
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        RecordEdits re = (RecordEdits) super.clone();
+        re.edits = (ArrayList<Estring>) edits.clone();
+		return re;
+	} 
 }

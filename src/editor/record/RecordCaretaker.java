@@ -2,7 +2,7 @@ package editor.record;
 import java.util.Stack;
 
 //擔任Caretaker的角色
-public class RecordCaretaker {
+public class RecordCaretaker implements Cloneable {
     //Last In First Out後進先出
     //使用Stack來儲存編輯的動作(陣列)
     private Stack<RecordMemento> history = new Stack<>();
@@ -39,4 +39,11 @@ public class RecordCaretaker {
             return false;
         }
     }
+        
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        RecordCaretaker rc = (RecordCaretaker) super.clone();
+        rc.history = (Stack<RecordMemento>) history.clone();
+		return rc;
+	} 
 }
