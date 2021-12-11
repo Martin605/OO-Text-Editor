@@ -57,7 +57,7 @@ public class FileMenu extends MenuItem {
                         @Override
                         public void actionPerformed(ActionEvent e) {
                         	try {
-                        		TextEditor a = (TextEditor) textEditor.clone();                         
+                        		TextEditor a = (TextEditor) textEditor.clone();//執行.clone()方法                       
                         	} catch(CloneNotSupportedException a) {
                         		a.printStackTrace();
                         	}
