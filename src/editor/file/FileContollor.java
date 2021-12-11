@@ -67,6 +67,11 @@ public class FileContollor implements Cloneable{
     public TextEditor get_TextEditor() { 
         return this.textEditor;
     }
+
+    public void set_TextEditor(TextEditor textEditor) { 
+        this.textEditor = textEditor;
+    }
+
 	@Override
 	public Object clone() throws CloneNotSupportedException {
 		return super.clone();

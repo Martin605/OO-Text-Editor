@@ -154,6 +154,7 @@ public class TextEditor extends Editor implements Visitable,Cloneable  {
 	public Object clone() throws CloneNotSupportedException {
 		   TextEditor a = new TextEditor(); 
 		   a.fileContollor =(FileContollor)fileContollor.clone();
+           a.fileContollor.set_TextEditor(a);
 		   a.text_area.setText(text_area.getText());
 		   a.recordController=(RecordController)recordController.clone();
 		   a.textCounter=null;
