@@ -12,6 +12,7 @@ TW1
 - ✔️Builder
 - ✔️Flyweight
 - ✔️Stat
+
 TW2
 - ✔️Bridge
 - ✔️Command
