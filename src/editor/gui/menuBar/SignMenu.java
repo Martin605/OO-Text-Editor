@@ -22,62 +22,70 @@ public class SignMenu extends MenuItem {
                 }
             )
         );
+
+        this.menuItem.add(new JMenuItem("====With Date===="));
         this.menuItem.add(
             new JMenuItem(
-                new AbstractAction("Add Sign At Start"){
+                new AbstractAction("Add Sign with Sincerely"){
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        Sign ss = new SampleSign(
-                            textEditor, 
+                        Sign ss = new Sincerely(
+                            textEditor,
                             EditorGroup.getEditorGroup().getSetting().get("oo.sign"), 
-                            new AddSignAtStart());
-                        ss.add();
-                    }
-                }
-            )
-        );
-        this.menuItem.add(
-            new JMenuItem(
-                new AbstractAction("Add Sign At End"){
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        Sign ss = new SampleSign(
-                            textEditor, 
-                            EditorGroup.getEditorGroup().getSetting().get("oo.sign"), 
+                            true,
                             new AddSignAtEnd());
-                        ss.add();
+                        ss.addSignature();
                     }
                 }
             )
         );
         this.menuItem.add(
             new JMenuItem(
-                new AbstractAction("Add Sign At Start with Date"){
+                new AbstractAction("Add Sign with Best Regard"){
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        Sign ss = new SignWithDate(
+                        Sign ss = new BestRegards(
                             textEditor, 
                             EditorGroup.getEditorGroup().getSetting().get("oo.sign"), 
-                            new AddSignAtStart());
-                        ss.add();
-                    }
-                }
-            )
-        );
-        this.menuItem.add(
-            new JMenuItem(
-                new AbstractAction("Add Sign At End with Date"){
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        Sign ss = new SignWithDate(
-                            textEditor, 
-                            EditorGroup.getEditorGroup().getSetting().get("oo.sign"), 
+                            true,
                             new AddSignAtEnd());
-                        ss.add();
+                        ss.addSignature();
                     }
                 }
             )
         );
+        this.menuItem.add(new JMenuItem("====Without Date===="));
+        this.menuItem.add(
+            new JMenuItem(
+                new AbstractAction("Add Sign with Sincerely"){
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        Sign ss = new Sincerely(
+                            textEditor,
+                            EditorGroup.getEditorGroup().getSetting().get("oo.sign"), 
+                            false,
+                            new AddSignAtEnd());
+                        ss.addSignature();
+                    }
+                }
+            )
+        );
+        this.menuItem.add(
+            new JMenuItem(
+                new AbstractAction("Add Sign with Best Regard"){
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        Sign ss = new BestRegards(
+                            textEditor, 
+                            EditorGroup.getEditorGroup().getSetting().get("oo.sign"), 
+                            false,
+                            new AddSignAtEnd());
+                        ss.addSignature();
+                    }
+                }
+            )
+        );
+
         this.addToThis();
     }
 }
