@@ -3,9 +3,13 @@ package editor.gui.menuBar;
 import javax.swing.*;
 
 import editor.TextEditor;
+import editor.record.action.*;
+import editor.record.command.*;
 
 import java.awt.event.ActionEvent;
 
+//
+// Inovker of Command
 public class EditMenu extends MenuItem {
     EditMenu(TextEditor textEditor) {
         super("Edit");
@@ -15,7 +19,20 @@ public class EditMenu extends MenuItem {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         //用戶想要復原
-                        textEditor.getRecordController().restore(); 
+                        Undo undo = new Undo(new UndoAction(), textEditor); 
+                        undo.action();
+                    }
+                }
+            )
+        );
+        this.menuItem.add(
+            new JMenuItem(
+                new AbstractAction("Redo"){
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        // 用戶想要Redo
+                        Redo redo = new Redo(new RedoAction(), textEditor); 
+                        redo.action();
                     }
                 }
             )
