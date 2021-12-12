@@ -12,6 +12,6 @@ public class AddSignAtStart implements AddSignAPI {
         // get editor edit area
         JTextPane tp = te.getTextArea();
         // set text at edit area
-        tp.setText("Dear "+name+",\n"+tp.getText());
+        tp.setText(name+"\n"+tp.getText());
     }; 
 }

@@ -7,18 +7,18 @@ package editor.sign;
 import editor.TextEditor;
 
 // Bridge pattern (Refined Abstraction)
-//也是Template patter (Concrete class 1)
-public class BestRegards extends Sign {
+//也是Template patter (Concrete class 3)
+public class Sender extends Sign {
 
     // setup Sign api
-    public BestRegards(TextEditor textEditor, String name, Boolean needDate, AddSignAPI addSign){       
+    public Sender(TextEditor textEditor, String name, Boolean needDate, AddSignAPI addSign){       
         super(addSign, textEditor, name, needDate);
     }
 
     //Oveeride class Sign的abstract方法
     @Override
     public String addWord(){
-        return "Best Regards,";
+        return "From: ";
     }
 
 }

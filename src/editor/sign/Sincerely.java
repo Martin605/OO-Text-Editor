@@ -3,7 +3,7 @@ package editor.sign;
 import editor.TextEditor;
 
 // Bridge pattern (Refined Abstraction)
-// 也有Template pattern(Abstract)
+// 也有Template pattern (Concrete class 2)
 public class Sincerely extends Sign {
 
     // setup Sign api
@@ -11,9 +11,10 @@ public class Sincerely extends Sign {
         super(addSign, textEditor, name, needDate);
     }
 
+    //Oveeride class Sign的abstract方法
     @Override
-    public void addEndWord(){
-        addSign.add(this.textEditor, "Your Sincerely,");
+    public String addWord(){
+        return "Your Sincerely,";
     }
 
 }

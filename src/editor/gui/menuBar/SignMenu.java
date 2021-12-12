@@ -9,6 +9,7 @@ import editor.sign.*;
 
 import java.awt.event.ActionEvent;
 
+//編輯器的Menu Bar，新增Sign(加簽名)按鈕
 public class SignMenu extends MenuItem {
     SignMenu(TextEditor textEditor) {
         super("Sign");
@@ -32,7 +33,7 @@ public class SignMenu extends MenuItem {
                         Sign ss = new Sincerely(
                             textEditor,
                             EditorGroup.getEditorGroup().getSetting().get("oo.sign"), 
-                            true,
+                            true, //加日期
                             new AddSignAtEnd());
                         ss.addSignature();
                     }
@@ -47,8 +48,23 @@ public class SignMenu extends MenuItem {
                         Sign ss = new BestRegards(
                             textEditor, 
                             EditorGroup.getEditorGroup().getSetting().get("oo.sign"), 
-                            true,
+                            true, //加日期
                             new AddSignAtEnd());
+                        ss.addSignature();
+                    }
+                }
+            )
+        );
+        this.menuItem.add(
+            new JMenuItem(
+                new AbstractAction("Add Sender"){
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        Sign ss = new Sender(
+                            textEditor,
+                            EditorGroup.getEditorGroup().getSetting().get("oo.sign"), 
+                            true, //加日期
+                            new AddSignAtStart());
                         ss.addSignature();
                     }
                 }
@@ -63,7 +79,7 @@ public class SignMenu extends MenuItem {
                         Sign ss = new Sincerely(
                             textEditor,
                             EditorGroup.getEditorGroup().getSetting().get("oo.sign"), 
-                            false,
+                            false, //不加日期
                             new AddSignAtEnd());
                         ss.addSignature();
                     }
@@ -78,14 +94,28 @@ public class SignMenu extends MenuItem {
                         Sign ss = new BestRegards(
                             textEditor, 
                             EditorGroup.getEditorGroup().getSetting().get("oo.sign"), 
-                            false,
+                            false, //不加日期
                             new AddSignAtEnd());
                         ss.addSignature();
                     }
                 }
             )
         );
-
+        this.menuItem.add(
+            new JMenuItem(
+                new AbstractAction("Add Sender"){
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        Sign ss = new Sender(
+                            textEditor,
+                            EditorGroup.getEditorGroup().getSetting().get("oo.sign"), 
+                            false, //不加日期
+                            new AddSignAtStart());
+                        ss.addSignature();
+                    }
+                }
+            )
+        );
         this.addToThis();
     }
 }
