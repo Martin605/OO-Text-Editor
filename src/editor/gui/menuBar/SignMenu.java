@@ -11,6 +11,10 @@ import java.awt.event.ActionEvent;
 
 //編輯器的Menu Bar，新增Sign(加簽名)按鈕
 public class SignMenu extends MenuItem {
+
+    AddSignAtStart start = new AddSignAtStart();
+    AddSignAtEnd end = new AddSignAtEnd();
+    
     SignMenu(TextEditor textEditor) {
         super("Sign");
         this.menuItem.add(
@@ -34,7 +38,7 @@ public class SignMenu extends MenuItem {
                             textEditor,
                             EditorGroup.getEditorGroup().getSetting().get("oo.sign"), 
                             true, //加日期
-                            new AddSignAtEnd());
+                            end);
                         ss.addSignature();
                     }
                 }
@@ -49,7 +53,7 @@ public class SignMenu extends MenuItem {
                             textEditor, 
                             EditorGroup.getEditorGroup().getSetting().get("oo.sign"), 
                             true, //加日期
-                            new AddSignAtEnd());
+                            end);
                         ss.addSignature();
                     }
                 }
@@ -64,7 +68,7 @@ public class SignMenu extends MenuItem {
                             textEditor,
                             EditorGroup.getEditorGroup().getSetting().get("oo.sign"), 
                             true, //加日期
-                            new AddSignAtStart());
+                            start);
                         ss.addSignature();
                     }
                 }
@@ -80,7 +84,7 @@ public class SignMenu extends MenuItem {
                             textEditor,
                             EditorGroup.getEditorGroup().getSetting().get("oo.sign"), 
                             false, //不加日期
-                            new AddSignAtEnd());
+                            end);
                         ss.addSignature();
                     }
                 }
@@ -95,7 +99,7 @@ public class SignMenu extends MenuItem {
                             textEditor, 
                             EditorGroup.getEditorGroup().getSetting().get("oo.sign"), 
                             false, //不加日期
-                            new AddSignAtEnd());
+                            end);
                         ss.addSignature();
                     }
                 }
@@ -110,7 +114,7 @@ public class SignMenu extends MenuItem {
                             textEditor,
                             EditorGroup.getEditorGroup().getSetting().get("oo.sign"), 
                             false, //不加日期
-                            new AddSignAtStart());
+                            start);
                         ss.addSignature();
                     }
                 }
