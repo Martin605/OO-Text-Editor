@@ -13,15 +13,16 @@ public abstract class Sign {
     protected String name;
     protected Boolean needDate;
 
-    // set Sign api
+    // 設定簽名 api
     protected Sign(AddSignAPI addSign, TextEditor textEditor, String name, Boolean needDate){       
         this.addSign = addSign;    
         this.textEditor = textEditor;
         this.name = name;
         this.needDate = needDate;
     }
-
+    //執行新增簽名的動作
     public final void addSignature(){
+        //定義簽名模板
         String output="";
         output += addWord() + "\n";
         output += add() + "\n";
@@ -30,6 +31,7 @@ public abstract class Sign {
         if(needDate){
             output += addDate();
         }
+        //使用AddSignAPI新增簽名至編輯範圍
         addSign.add(this.textEditor, output);
     }
 

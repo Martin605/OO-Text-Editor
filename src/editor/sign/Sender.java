@@ -10,7 +10,7 @@ import editor.TextEditor;
 //也是Template patter (Concrete class 3)
 public class Sender extends Sign {
 
-    // setup Sign api
+    // 設定簽名api
     public Sender(TextEditor textEditor, String name, Boolean needDate, AddSignAPI addSign){       
         super(addSign, textEditor, name, needDate);
     }

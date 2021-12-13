@@ -10,9 +10,11 @@ import editor.sign.*;
 import java.awt.event.ActionEvent;
 
 //編輯器的Menu Bar，新增Sign(加簽名)按鈕
+// Bridge pattern (Client)
 public class SignMenu extends MenuItem {
 
     AddSignAtStart start = new AddSignAtStart();
+    //建立AddSignApi的 (Concrete Implementor)
     AddSignAtEnd end = new AddSignAtEnd();
     
     SignMenu(TextEditor textEditor) {
@@ -21,7 +23,7 @@ public class SignMenu extends MenuItem {
             new JMenuItem(
                 new AbstractAction("Set Sign"){
                     @Override
-                    public void actionPerformed(ActionEvent e) {
+                    public void actionPerformed(ActionEvent e) {  
                         new SetSignFrame();
                     }
                 }
@@ -33,12 +35,14 @@ public class SignMenu extends MenuItem {
             new JMenuItem(
                 new AbstractAction("Add Sign with Sincerely"){
                     @Override
-                    public void actionPerformed(ActionEvent e) {
+                    public void actionPerformed(ActionEvent e) { 
+                        //定義refine attribute,並傳入AddSignApi
                         Sign ss = new Sincerely(
                             textEditor,
                             EditorGroup.getEditorGroup().getSetting().get("oo.sign"), 
                             true, //加日期
                             end);
+                            //執行加簽名的動作
                         ss.addSignature();
                     }
                 }
@@ -49,11 +53,13 @@ public class SignMenu extends MenuItem {
                 new AbstractAction("Add Sign with Best Regard"){
                     @Override
                     public void actionPerformed(ActionEvent e) {
+                        //定義refine attribute,並傳入AddSignApi
                         Sign ss = new BestRegards(
                             textEditor, 
                             EditorGroup.getEditorGroup().getSetting().get("oo.sign"), 
                             true, //加日期
                             end);
+                            //執行加簽名的動作
                         ss.addSignature();
                     }
                 }
@@ -64,11 +70,13 @@ public class SignMenu extends MenuItem {
                 new AbstractAction("Add Sender"){
                     @Override
                     public void actionPerformed(ActionEvent e) {
+                        //定義refine attribute,並傳入AddSignApi
                         Sign ss = new Sender(
                             textEditor,
                             EditorGroup.getEditorGroup().getSetting().get("oo.sign"), 
                             true, //加日期
                             start);
+                            //執行加簽名的動作
                         ss.addSignature();
                     }
                 }

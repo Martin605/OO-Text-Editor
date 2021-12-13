@@ -5,13 +5,13 @@ import javax.swing.JTextPane;
 import editor.TextEditor;
 
 // Bridge pattern (Concrete Implementor)
-// add Sign at start of file
+//新增簽名在文件的頭端
 public class AddSignAtStart implements AddSignAPI {
-    // add Sign
+    // 新增簽名
     public void add(TextEditor te, String name) {
-        // get editor edit area
+         // 取得編輯器的編輯範圍
         JTextPane tp = te.getTextArea();
-        // set text at edit area
+        // 設至文字在編輯範圍
         tp.setText(name+"\n"+tp.getText());
     }; 
 }

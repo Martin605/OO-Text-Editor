@@ -6,7 +6,7 @@ import editor.TextEditor;
 // 也有Template pattern (Concrete class 2)
 public class Sincerely extends Sign {
 
-    // setup Sign api
+    // 設定簽名 api
     public Sincerely(TextEditor textEditor, String name, Boolean needDate, AddSignAPI addSign){       
         super(addSign, textEditor, name, needDate);
     }

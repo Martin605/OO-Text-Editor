@@ -10,7 +10,7 @@ import editor.TextEditor;
 //也是Template patter (Concrete class 1)
 public class BestRegards extends Sign {
 
-    // setup Sign api
+    // 設定簽名 api
     public BestRegards(TextEditor textEditor, String name, Boolean needDate, AddSignAPI addSign){       
         super(addSign, textEditor, name, needDate);
     }
