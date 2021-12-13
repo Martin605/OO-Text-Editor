@@ -1,38 +1,35 @@
 package editor.gui.menuBar;
 
 import java.awt.event.ActionEvent;
-
 import javax.swing.AbstractAction;
 import javax.swing.JMenuItem;
-
 import editor.EditorGroup;
-import editor.setting.style.*;
-
+import editor.gui.os.*;
 public class OsMenu extends MenuItem {
 
 	StyleFactory stylefactory = new StyleFactory(); 
 	StyleSet styleset = new StyleSet(stylefactory);
 	
 	OsMenu() {
-		super("Style");
+		super("OSstyle");
 		this.menuItem.add( 
 	            new JMenuItem(
-	                new AbstractAction("Style1"){
+	                new AbstractAction("Windows"){
 	                    @Override
 	                    public void actionPerformed(ActionEvent e) {
-	                    	Style style1 = styleset.MainStyle();
-	                    	EditorGroup.getEditorGroup().setFont(style1.getFont());
+	                    	Abstractfactory Windowsfactory = new WindowAbstractFactory();
+	                    	Product1 windows = Windowsfactory.get();
 	                    }
 	                }
 	            )
 	        );
 		this.menuItem.add( 
 	            new JMenuItem(
-	                new AbstractAction("Style2"){
+	                new AbstractAction("Linux"){
 	                    @Override
 	                    public void actionPerformed(ActionEvent e) {
-	                    	Style style2 = styleset.NoteStyle();
-	                    	EditorGroup.getEditorGroup().setFont(style2.getFont());
+	                    	Abstractfactory Linuxfactory = new LinuxAbstractFactory();
+	                    	Product2 windows = Linuxfactory.get();
 	                    }
 	                }
 	            )
