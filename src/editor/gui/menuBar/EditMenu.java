@@ -8,8 +8,8 @@ import editor.record.command.*;
 
 import java.awt.event.ActionEvent;
 
-//
-// Inovker of Command
+//Command Pattern
+//擔任 Command Pattern 的 Inovker 角色
 public class EditMenu extends MenuItem {
     EditMenu(TextEditor textEditor) {
         super("Edit");
@@ -25,6 +25,7 @@ public class EditMenu extends MenuItem {
                 }
             )
         );
+        //建立Redo按鈕
         this.menuItem.add(
             new JMenuItem(
                 new AbstractAction("Redo"){

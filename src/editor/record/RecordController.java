@@ -62,15 +62,12 @@ public class RecordController implements Cloneable {
         restoring = false; //復原後再將此設為不是復原的動作
     }
 
-    //
-    //
-    public void unrestore() { //復原上一步的動作
-        restoring = true; //設定目前為復原的動作
+    public void unrestore() { //重做被復原的動作
+        restoring = true; //設定目前為重做的動作
         boolean redo = careTaker.regetMemento(recordedits); 
-        //一個名稱為undo的Boolean型態變數，
+        //一個名稱為redo的Boolean型態變數，
         //將history Stack是否為空的結果，
-        //利用getMemento()回傳並設定到undo
-
+        //利用getMemento()回傳並設定到redo
         if (redo) { //如果不是空的
             this.texteditor.getTextArea().setText(
                 EcharacterFactory.arrayListToString(
@@ -83,9 +80,9 @@ public class RecordController implements Cloneable {
 
         } else { //如果是空的
             texteditor.showMsg("Cannot redo!!!", "!!!!!!Cannot redo!!!!!!");
-            //顯示無法復原
+            //顯示無法重做
         }
-        restoring = false; //復原後再將此設為不是復原的動作
+        restoring = false; //重做後再將此設為不是重做的動作
     }
 
     public void set_TextEditor(TextEditor texteditor) {
