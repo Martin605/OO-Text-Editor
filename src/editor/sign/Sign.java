@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.Locale;
 
 // Bridge pattern (Abstraction)
-//也是Template pattern (Abstract class)
+//也是Template pattern (Abstract class)---Emmmmma
 public abstract class Sign {
     protected AddSignAPI addSign;
     protected TextEditor textEditor;
