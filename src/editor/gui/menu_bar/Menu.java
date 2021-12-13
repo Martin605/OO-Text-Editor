@@ -1,13 +1,15 @@
-package editor.gui.menuBar;
+package editor.gui.menu_bar;
 
 import javax.swing.*;
+
+import java.awt.*;
 import java.util.ArrayList;
 
-public class MenuItem extends JMenu {
+public class Menu extends JMenu {
 
     protected ArrayList<JMenuItem> menuItem = new ArrayList<JMenuItem>();
 
-    MenuItem(String name) {
+    Menu(String name) {
         super(name);
     }
 
@@ -16,4 +18,10 @@ public class MenuItem extends JMenu {
             this.add(i);
         }
     }
+
+    public void setTheme(Color background, Color foreground) {
+        this.setBackground(background);
+        this.setForeground(foreground);
+    }
+
 }

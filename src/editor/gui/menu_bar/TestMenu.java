@@ -1,4 +1,4 @@
-package editor.gui.menuBar;
+package editor.gui.menu_bar;
 
 import java.awt.event.ActionEvent;
 import javax.swing.*;
@@ -6,7 +6,7 @@ import javax.swing.*;
 import editor.TextEditor;
 import editor.file.FileAction;
 
-public class TestMenu extends MenuItem {
+public class TestMenu extends Menu {
 
     TestMenu(TextEditor textEditor) {
         super("Test");

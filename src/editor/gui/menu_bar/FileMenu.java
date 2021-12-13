@@ -1,51 +1,52 @@
-package editor.gui.menuBar;
+package editor.gui.menu_bar;
 
 import javax.swing.*;
 
 import editor.TextEditor;
-import editor.gui.frame.*;
+import editor.file.FileAction;
 
 import java.awt.event.ActionEvent;
 
-public class ToolMenu extends MenuItem {
-    ToolMenu(TextEditor textEditor) {
-        super("Tool");
-        this.menuItem.add(
+public class FileMenu extends Menu {
+    FileMenu(TextEditor textEditor) {
+        super("File");
+
+        this.menuItem.add( 
             new JMenuItem(
-                new AbstractAction("Preview (HTML)"){
+                new AbstractAction("New Window"){
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        new PreviewFrame(textEditor);
+                        new TextEditor();
                     }
                 }
             )
         );
-        this.menuItem.add( 
+        this.menuItem.add(  
             new JMenuItem(
-                new AbstractAction("Text Counter"){
+                new AbstractAction("Open"){
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        new TextCounterFrame(textEditor);
-                    }
-                }
-            )
-        );
-        this.menuItem.add( 
-            new JMenuItem(
-                new AbstractAction("Vocabulary Counter"){
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        new VocabularyCounterFrame(textEditor);
+                        new FileAction().open(textEditor);
                     }
                 }
             )
         );
         this.menuItem.add(
             new JMenuItem(
-                new AbstractAction("Get File List"){
+                new AbstractAction("Save"){
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        new FileListFrame(textEditor);
+                        textEditor.getFileContollor().save();
+                    }
+                }
+            )
+        );
+        this.menuItem.add(  
+            new JMenuItem(
+                new AbstractAction("Save As"){
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        new FileAction().save_as(textEditor);
                     }
                 }
             )

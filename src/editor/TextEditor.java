@@ -2,13 +2,13 @@ package editor;
 
 import javax.swing.*;
 
-import editor.gui.menuBar.MenuBar;
 import editor.record.*;
 import editor.visitor.Visitor;
 import editor.file.FileContollor;
 import editor.gui.body.TextArea;
 import editor.gui.frame.TextCounterFrame;
 import editor.gui.frame.VocabularyCounterFrame;
+import editor.gui.menu_bar.MenuBar;
 import editor.visitor.Visitable;
 
 import java.awt.*;
@@ -22,6 +22,7 @@ public class TextEditor extends Editor implements Visitable {
 
     private EditorGroup editorGroup = EditorGroup.getEditorGroup();
     private FileContollor fileContollor;
+    private MenuBar menu_bar;
     private JTextPane text_area = new TextArea();
     private RecordController recordController;
     private TextCounterFrame textCounter;
@@ -32,7 +33,7 @@ public class TextEditor extends Editor implements Visitable {
         editorGroup.addEditor(this);
 
         fileContollor = new FileContollor(this);
-        JMenuBar menu_bar = new MenuBar(this);
+        menu_bar = new MenuBar(this);
 
         new RecordListener(this);
         recordController = new RecordController(this);
@@ -78,6 +79,7 @@ public class TextEditor extends Editor implements Visitable {
     public void update_theme(Color background, Color foreground) {
         text_area.setBackground(background); //設定背景顏色
         text_area.setForeground(foreground); //設定字體顏色
+        menu_bar.setTheme(background, foreground);
     }
 
     //Observer Pattern override Editor的方法

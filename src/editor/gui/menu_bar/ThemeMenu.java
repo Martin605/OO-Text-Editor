@@ -1,4 +1,4 @@
-package editor.gui.menuBar;
+package editor.gui.menu_bar;
 
 import java.awt.event.ActionEvent;
 import javax.swing.*;
@@ -6,7 +6,7 @@ import javax.swing.*;
 import editor.EditorGroup;
 import editor.setting.theme.*;
 
-public class ThemeMenu extends MenuItem {
+public class ThemeMenu extends Menu {
 
     EditorGroup editorGroup;
 

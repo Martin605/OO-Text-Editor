@@ -1,4 +1,4 @@
-package editor.gui.menuBar;
+package editor.gui.menu_bar;
 
 import javax.swing.*;
 
@@ -6,7 +6,7 @@ import editor.TextEditor;
 
 import java.awt.event.ActionEvent;
 
-public class EditMenu extends MenuItem {
+public class EditMenu extends Menu {
     EditMenu(TextEditor textEditor) {
         super("Edit");
         this.menuItem.add(
