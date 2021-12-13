@@ -9,7 +9,7 @@ public class Undo extends Command {
     public Undo(RecordAction receiver, TextEditor textEditor) {
         //並呼叫父類別Command的建構子
         super(receiver, textEditor);
-        System.out.println("Undo create");
+        //System.out.println("Undo create");
     }
 
 }

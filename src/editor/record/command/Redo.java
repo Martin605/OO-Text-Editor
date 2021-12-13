@@ -9,7 +9,7 @@ public class Redo extends Command {
     public Redo(RecordAction receiver, TextEditor textEditor) {
         //並呼叫父類別Command的建構子
         super(receiver, textEditor);
-        System.out.println("Redo create");
+        //System.out.println("Redo create");
     }
 
 }

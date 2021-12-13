@@ -14,11 +14,11 @@ public abstract class Command {
         //設定RecordAction和TextEditor的值
         this.receiver = receiver;
         this.textEditor = textEditor;
-        System.out.println("Command Create");
+        //System.out.println("Command Create");
     }
     //宣告action()方法
     public void action() {
-        System.out.println("Command action");
+       // System.out.println("Command action");
         //呼叫receiver的action方法
         this.receiver.action(textEditor);
     }
