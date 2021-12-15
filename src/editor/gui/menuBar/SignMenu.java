@@ -12,10 +12,10 @@ import java.awt.event.ActionEvent;
 //編輯器的Menu Bar，新增Sign(加簽名)按鈕
 // Bridge pattern (Client)
 public class SignMenu extends MenuItem {
-
-    AddSignAtStart start = new AddSignAtStart();
+    
     //建立AddSignApi的 (Concrete Implementor)
-    AddSignAtEnd end = new AddSignAtEnd();
+    private AddSignAtStart start = new AddSignAtStart();
+    private AddSignAtEnd end = new AddSignAtEnd();
     
     SignMenu(TextEditor textEditor) {
         super("Sign");
