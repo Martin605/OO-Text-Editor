@@ -69,6 +69,18 @@ public class EditMenu extends MenuItem {
                 }
             )
         );
+        this.menuItem.add(
+                new JMenuItem(
+                    new AbstractAction("Insert"){
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+                        	//執行insert
+                           Command insert= new Insert(new InsertAction(), textEditor); 
+                           insert.action();
+                        }
+                    }
+                )
+            );
         this.addToThis();
     }
 }
