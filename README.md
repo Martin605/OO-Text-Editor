@@ -16,3 +16,4 @@ TW1
 TW2
 - ✔️Bridge
 - ✔️Command
+- ✔️Factory Method
