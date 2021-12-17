@@ -32,9 +32,13 @@ public class InsertAction implements RecordAction{
 					int len = textEditor.getTextArea().getText().length();//取得全部長度
 					int Elen = textEditor.getTextArea().getText(0, textEditor.getTextArea().getCaretPosition()).length();//取得插入點前的長度
 					int Alen = len-Elen-1;//取得插入點後的長度
-					String OContent = textEditor.getTextArea().getText(0, textEditor.getTextArea().getCaretPosition());//取得插入點前的內容
-					String EContent =textEditor.getTextArea().getText(textEditor.getTextArea().getCaretPosition(),Alen);//取得插入點後的內容
-					textEditor.getTextArea().setText(OContent + content+EContent);//將所有文字顯示
+					if(len!=0){
+						String OContent = textEditor.getTextArea().getText(0, textEditor.getTextArea().getCaretPosition());//取得插入點前的內容
+						String EContent =textEditor.getTextArea().getText(textEditor.getTextArea().getCaretPosition(),Alen);//取得插入點後的內容
+						textEditor.getTextArea().setText(OContent + content+EContent);//將所有文字顯示
+					}else{
+						textEditor.getTextArea().setText(content);
+					}
 				
 				} catch (BadLocationException e) {
 					
