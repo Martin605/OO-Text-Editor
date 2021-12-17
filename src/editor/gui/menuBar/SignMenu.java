@@ -14,8 +14,8 @@ import java.awt.event.ActionEvent;
 public class SignMenu extends MenuItem {
 
     //建立AddSignApi的 (Concrete Implementor)
-    private AddSignAtStart start = new AddSignAtStart();
-    private AddSignAtEnd end = new AddSignAtEnd();
+    private AddSignAPI start = new AddSignAtStart();
+    private AddSignAPI end = new AddSignAtEnd();
     
     SignMenu(TextEditor textEditor) {
         super("Sign");
