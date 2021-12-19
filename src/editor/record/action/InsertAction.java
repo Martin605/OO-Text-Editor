@@ -18,6 +18,7 @@ public class InsertAction implements RecordAction{
 	@Override
 	public void action(TextEditor textEditor) {
 		String content;
+		String original_content;
 		File file;
 		fileChooser.setDialogTitle("Select a file that you want to Insert"); //設定視窗標題
 	    
@@ -27,21 +28,19 @@ public class InsertAction implements RecordAction{
 	        file = fileChooser.getSelectedFile();  
 	        try {
 				content = new String (Files.readAllBytes( Paths.get(file.getAbsolutePath()) ));
+				original_content = textEditor.getTextArea().getText();
 				//取得內容
 				try {
 					int len = textEditor.getTextArea().getText().length();//取得全部長度
-					int Elen = textEditor.getTextArea().getText(0, textEditor.getTextArea().getCaretPosition()).length();//取得插入點前的長度
-					int Alen = len-Elen-1;//取得插入點後的長度
+					int position = textEditor.getTextArea().getCaretPosition();//取得插入點前的長度
+					// int lenacp = len-Elen; //取得插入點後的長度
 					if(len!=0){
-						String OContent = textEditor.getTextArea().getText(0, textEditor.getTextArea().getCaretPosition());//取得插入點前的內容
-						String EContent =textEditor.getTextArea().getText(textEditor.getTextArea().getCaretPosition(),Alen);//取得插入點後的內容
-						textEditor.getTextArea().setText(OContent + content+EContent);//將所有文字顯示
-					}else{
-						textEditor.getTextArea().setText(content);
+						String OContent = original_content.substring(0, position);//取得插入點前的內容
+						String EContent = original_content.substring(position, len);//取得插入點後的內容
+						textEditor.getTextArea().setText(OContent+content+EContent);//將所有文字顯示
+						textEditor.getTextArea().setCaretPosition(position+content.length());
 					}
-				
-				} catch (BadLocationException e) {
-					
+				} catch (Exception e) {
 					e.printStackTrace();
 				}
 	        
