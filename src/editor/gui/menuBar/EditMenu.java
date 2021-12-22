@@ -19,7 +19,7 @@ public class EditMenu extends MenuItem {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         //用戶想要復原
-                        Undo undo = new Undo(new UndoAction(), textEditor); 
+                        Command undo = new Undo(new UndoAction(), textEditor); 
                         undo.action();
                     }
                 }
@@ -32,7 +32,7 @@ public class EditMenu extends MenuItem {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         // 用戶想要Redo
-                        Redo redo = new Redo(new RedoAction(), textEditor); 
+                        Command redo = new Redo(new RedoAction(), textEditor); 
                         redo.action();
                     }
                 }
