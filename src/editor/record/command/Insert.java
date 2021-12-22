@@ -5,8 +5,8 @@ import editor.record.action.RecordAction;
 
 public class Insert extends Command{
 		//繼承commend的執行插入的命令
-		public Insert(RecordAction recordAction,TextEditor textEditor) {
-			super(recordAction,textEditor);
+		public Insert(RecordAction receiver,TextEditor textEditor) {
+			super(receiver,textEditor);
 			
 		}
 }
