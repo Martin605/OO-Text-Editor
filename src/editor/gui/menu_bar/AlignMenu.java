@@ -1,4 +1,4 @@
-package editor.gui.menuBar;
+package editor.gui.menu_bar;
 
 import java.awt.event.ActionEvent;
 
@@ -12,7 +12,7 @@ import editor.align.CenterAlignFactory;
 import editor.align.LeftAlignFactory;
 import editor.align.RightAlignFactory;
 
-public class AlignMenu extends MenuItem{
+public class AlignMenu extends Menu{
 	AlignMenu(TextEditor texteditor) {
 		super("Align");
 		this.menuItem.add( 

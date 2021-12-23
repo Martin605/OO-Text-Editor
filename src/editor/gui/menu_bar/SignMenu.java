@@ -1,4 +1,4 @@
-package editor.gui.menuBar;
+package editor.gui.menu_bar;
 
 import javax.swing.*;
 
@@ -11,7 +11,7 @@ import java.awt.event.ActionEvent;
 
 //編輯器的Menu Bar，新增Sign(加簽名)按鈕
 // Bridge pattern (Client)
-public class SignMenu extends MenuItem {
+public class SignMenu extends Menu {
 
     //建立AddSignApi的 (Concrete Implementor)
     private AddSignAPI start = new AddSignAtStart();

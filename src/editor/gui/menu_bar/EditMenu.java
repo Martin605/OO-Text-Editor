@@ -1,4 +1,4 @@
-package editor.gui.menuBar;
+package editor.gui.menu_bar;
 
 import javax.swing.*;
 
@@ -8,9 +8,7 @@ import editor.record.command.*;
 
 import java.awt.event.ActionEvent;
 
-//Command Pattern
-//擔任 Command Pattern 的 Inovker 角色
-public class EditMenu extends MenuItem {
+public class EditMenu extends Menu {
     EditMenu(TextEditor textEditor) {
         super("Edit");
         this.menuItem.add(

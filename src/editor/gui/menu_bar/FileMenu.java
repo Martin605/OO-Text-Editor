@@ -1,4 +1,4 @@
-package editor.gui.menuBar;
+package editor.gui.menu_bar;
 
 import javax.swing.*;
 
@@ -7,7 +7,7 @@ import editor.file.FileAction;
 
 import java.awt.event.ActionEvent;
 
-public class FileMenu extends MenuItem {
+public class FileMenu extends Menu {
     FileMenu(TextEditor textEditor) {
         super("File");
 

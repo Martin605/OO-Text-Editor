@@ -1,4 +1,4 @@
-package editor.gui.menuBar;
+package editor.gui.menu_bar;
 
 import java.awt.event.ActionEvent;
 
@@ -8,7 +8,7 @@ import javax.swing.JMenuItem;
 import editor.EditorGroup;
 import editor.setting.style.*;
 
-public class StyleMenu extends MenuItem {
+public class StyleMenu extends Menu {
 
 	StyleFactory stylefactory = new StyleFactory(); 
 	StyleSet styleset = new StyleSet(stylefactory);
