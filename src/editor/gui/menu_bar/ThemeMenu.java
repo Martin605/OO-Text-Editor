@@ -2,9 +2,13 @@ package editor.gui.menu_bar;
 
 import java.awt.event.ActionEvent;
 
-public class ThemeMenu extends Menu {
+import javax.swing.*;
+
+import editor.EditorGroup;
+import editor.setting.theme.*;
+
 //Abstract Factory 
-public class ThemeMenu extends MenuItem {
+public class ThemeMenu extends Menu {
 
     EditorGroup editorGroup;
 
