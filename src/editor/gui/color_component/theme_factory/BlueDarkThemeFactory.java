@@ -7,12 +7,12 @@ public class BlueDarkThemeFactory implements ThemeFactory {
 //回傳背景、Bar、字型顏色
 	@Override
 	public BackgroundColor createBackgroundColor() {
-		return new DarkBackgroundColor();
+		return new BlueDarkBackgroundColor();
 	}
 
 	@Override
 	public ForegroundColor createForegroundColor() {
-		return new DarkForegroundColor();
+		return new BlueDarkForegroundColor();
 	}
 	
 }

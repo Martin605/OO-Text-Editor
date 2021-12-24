@@ -6,7 +6,7 @@ public class LightGrayBackgroundColor extends BackgroundColor {
 	//回傳背景、Bar顏色
 	@Override
 	public Color getColor() {
-		return new Color(255, 250, 250);
+		return new Color(190, 194, 191);
 	}
 
 }

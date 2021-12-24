@@ -6,7 +6,7 @@ public class BlueDarkForegroundColor extends ForegroundColor {
 //回傳字型顏色
 	@Override
 	public Color getColor() {
-		return new Color(12, 26, 39);
+		return new Color(255, 255, 255);
 	}
 
 }

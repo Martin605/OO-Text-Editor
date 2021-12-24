@@ -6,7 +6,7 @@ public class BlueDarkBackgroundColor extends BackgroundColor {
 //回傳背景、Bar顏色
 	@Override
 	public Color getColor() {
-		return new Color(255, 255, 204);
+		return new Color(25, 25, 112);
 	}
 
 }
