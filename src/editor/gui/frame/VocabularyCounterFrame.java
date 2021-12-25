@@ -17,7 +17,7 @@ public class VocabularyCounterFrame extends Frame {
     private TextEditor te;
 
     //在此實行Visitor Pattern
-    private Calculatevocabulary teVisitor = new Calculatevocabulary();
+    private Visitor teVisitor = new Calculatevocabulary();
 
     public VocabularyCounterFrame(TextEditor te) {
         super("Vocabulary Counter");

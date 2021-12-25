@@ -17,7 +17,7 @@ public class TextCounterFrame extends Frame {
     private TextEditor te;
 
     //在此實行Visitor Pattern
-    private TextEditorVisitor teVisitor = new TextEditorVisitor();
+    private Visitor teVisitor = new TextEditorVisitor();
 
     public TextCounterFrame(TextEditor te) {
         super("Text Counter");
