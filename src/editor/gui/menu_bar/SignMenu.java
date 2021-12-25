@@ -21,7 +21,7 @@ public class SignMenu extends Menu {
         super("Sign");
         this.menuItem.add(
             new JMenuItem(
-                new AbstractAction("Set Sign"){
+                new AbstractAction("Set Sign"){ //讓使用者設定名字
                     @Override
                     public void actionPerformed(ActionEvent e) {  
                         new SetSignFrame();
@@ -33,7 +33,7 @@ public class SignMenu extends Menu {
         this.menuItem.add(new JMenuItem("====With Date===="));
         this.menuItem.add(
             new JMenuItem(
-                new AbstractAction("Add Sign with Sincerely"){
+                new AbstractAction("Add Sign with Your Sincerely"){
                     @Override
                     public void actionPerformed(ActionEvent e) { 
                         //定義refine attribute,並傳入AddSignApi
@@ -50,7 +50,7 @@ public class SignMenu extends Menu {
         );
         this.menuItem.add(
             new JMenuItem(
-                new AbstractAction("Add Sign with Best Regard"){
+                new AbstractAction("Add Sign with Best Regards"){
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         //定義refine attribute,並傳入AddSignApi
