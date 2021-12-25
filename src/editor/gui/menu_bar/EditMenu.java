@@ -9,6 +9,9 @@ import editor.record.command.*;
 import java.awt.event.ActionEvent;
 
 public class EditMenu extends Menu {
+
+    private Inovker inovker = new Inovker();
+
     EditMenu(TextEditor textEditor) {
         super("Edit");
         this.menuItem.add(
@@ -18,7 +21,8 @@ public class EditMenu extends Menu {
                     public void actionPerformed(ActionEvent e) {
                         //用戶想要復原
                         Command undo = new Undo(new UndoAction(), textEditor); 
-                        undo.action();
+                        inovker.setCommand(undo);
+                        inovker.run();
                     }
                 }
             )
@@ -31,7 +35,8 @@ public class EditMenu extends Menu {
                     public void actionPerformed(ActionEvent e) {
                         // 用戶想要Redo
                         Command redo = new Redo(new RedoAction(), textEditor); 
-                        redo.action();
+                        inovker.setCommand(redo);
+                        inovker.run();
                     }
                 }
             )
@@ -43,7 +48,8 @@ public class EditMenu extends Menu {
                         public void actionPerformed(ActionEvent e) {
                         	//執行insert
                            Command insert= new Insert(new InsertAction(), textEditor); 
-                           insert.action();
+                           inovker.setCommand(insert);
+                            inovker.run();
                         }
                     }
                 )
