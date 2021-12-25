@@ -17,9 +17,9 @@ public class Inovker {
 
     public void run() {
         for(Command command : commandList) {
-            command.action(); 
+            command.action();
         }
-
+        commandList = new ArrayList<>();
     }
 
 }
