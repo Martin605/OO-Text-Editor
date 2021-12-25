@@ -56,7 +56,7 @@ public class FileMenu extends Menu {
                     new AbstractAction("Open As New Window"){
                         @Override
                         public void actionPerformed(ActionEvent e) {
-                            textEditor.copyAsNewWindow();
+                            textEditor.openAsNewWindow();
                         }
                     }
                 )
