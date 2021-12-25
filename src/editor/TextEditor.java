@@ -154,7 +154,7 @@ public class TextEditor extends Editor implements Visitable {
     //讓TextEditor接受Visitor，造訪他，並來回傳他自己
 
     //Prototype Pattern(client)
-	public void copyAsNewWindow(){
+	public void openAsNewWindow(){
         //建立新TextEditor
 		TextEditor a = new TextEditor(); 
         //複製text_area
