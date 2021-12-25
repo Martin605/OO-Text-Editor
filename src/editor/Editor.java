@@ -6,7 +6,7 @@ import javax.swing.*;
 
 //Observer Pattern
 //擔任抽象Observer角色
-public abstract class Editor extends JFrame  implements Cloneable {
+public abstract class Editor extends JFrame {
     //加入目前開啟的視窗到編輯視窗組，
     //並取得目前編輯視窗組(所有開啟的視窗)
     protected Editor(String name) { 

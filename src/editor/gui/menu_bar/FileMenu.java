@@ -56,12 +56,7 @@ public class FileMenu extends Menu {
                     new AbstractAction("Open As New Window"){
                         @Override
                         public void actionPerformed(ActionEvent e) {
-                        	try {
-                        		TextEditor a = (TextEditor) textEditor.clone();//執行.clone()方法                       
-                        	} catch(CloneNotSupportedException a) {
-                        		a.printStackTrace();
-                        	}
-                        	
+                            textEditor.copyAsNewWindow();
                         }
                     }
                 )

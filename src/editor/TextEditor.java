@@ -17,7 +17,7 @@ import java.awt.event.*;
 //Observer Pattern
 //擔任Concrete Observer角色
 //Visitor pattern(Component class)
-public class TextEditor extends Editor implements Visitable,Cloneable {
+public class TextEditor extends Editor implements Visitable {
     //繼承Editor，再implement visitable interface
 
     private EditorGroup editorGroup = EditorGroup.getEditorGroup();
@@ -152,23 +152,23 @@ public class TextEditor extends Editor implements Visitable,Cloneable {
         return visitor.visit(this); 
     }
     //讓TextEditor接受Visitor，造訪他，並來回傳他自己
-  
-	@Override
-	public Object clone() throws CloneNotSupportedException {
+
+    //Prototype Pattern(client)
+	public void copyAsNewWindow(){
         //建立新TextEditor
 		TextEditor a = new TextEditor(); 
         //複製text_area
 		a.text_area.setText(text_area.getText());
-        //複製fileContollor
-		a.fileContollor = (FileContollor) fileContollor.clone();
-        a.fileContollor.set_TextEditor(a);
-        //複製recordController
-		a.recordController = (RecordController) recordController.clone();
-        a.recordController.set_TextEditor(a);
+        try {
+            //複製recordController
+            a.recordController = (RecordController) recordController.clone();
+            a.recordController.set_TextEditor(a);
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
         //設定空值
 		a.textCounter=null;
         //設定空值
 		a.vocabularyCounter=null;
-		return a;
 	} 
 }
