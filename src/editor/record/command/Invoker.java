@@ -3,7 +3,7 @@ package editor.record.command;
 import java.util.*;
 
 
-public class Inovker {
+public class Invoker {
     
     private List <Command> commandList = new ArrayList<>();
 
