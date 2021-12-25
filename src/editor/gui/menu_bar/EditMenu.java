@@ -21,8 +21,8 @@ public class EditMenu extends Menu {
                     public void actionPerformed(ActionEvent e) {
                         //用戶想要復原
                         Command undo = new Undo(new UndoAction(), textEditor); 
-                        inovker.setCommand(undo);
-                        inovker.run();
+                        inovker.setCommand(undo);//將undo物件新增到Inovker的commandList
+                        inovker.run();//呼叫inovker的run()方法執行動作
                     }
                 }
             )
@@ -35,7 +35,7 @@ public class EditMenu extends Menu {
                     public void actionPerformed(ActionEvent e) {
                         // 用戶想要Redo
                         Command redo = new Redo(new RedoAction(), textEditor); 
-                        inovker.setCommand(redo);
+                        inovker.setCommand(redo);//將redo物件新增到Inovker的commandList
                         inovker.run();
                     }
                 }
@@ -48,7 +48,7 @@ public class EditMenu extends Menu {
                         public void actionPerformed(ActionEvent e) {
                         	//執行insert
                            Command insert= new Insert(new InsertAction(), textEditor); 
-                           inovker.setCommand(insert);
+                           inovker.setCommand(insert);//將insert物件新增到Inovker的commandList
                             inovker.run();
                         }
                     }
