@@ -19,3 +19,4 @@ TW2
 - ✔️Factory Method
 - ✔️Template
 - ✔️Prototype
+- ✔️Abstract Factory Pattern
