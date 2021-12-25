@@ -157,7 +157,7 @@ public class TextEditor extends Editor implements Visitable {
 	public void openAsNewWindow(){
         //建立新TextEditor
 		TextEditor a = new TextEditor(); 
-        //複製text_area
+        //設定原本text_area到新的視窗
 		a.text_area.setText(text_area.getText());
         try {
             //複製recordController
