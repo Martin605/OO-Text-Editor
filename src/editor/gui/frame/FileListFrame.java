@@ -11,11 +11,9 @@ import editor.file.fileList.iterator.FLList;
 public class FileListFrame extends Frame {
 
     private JTextArea context = new JTextArea("");
-    private TextEditor te;
 
     public FileListFrame(TextEditor te) {
-        super("File List");
-        this.te = te;
+        super("File List", te);
         context.setEditable(false);
         JScrollPane scrollPane = new JScrollPane(context);
         this.add(scrollPane, BorderLayout.CENTER);
@@ -29,7 +27,7 @@ public class FileListFrame extends Frame {
         this.set_text(
             FLList.getList(
                 new File(
-                    te.getFileContollor().get_path()
+                    this.textEditor.getFileContollor().get_path()
                 ).getParent()
             )
         );

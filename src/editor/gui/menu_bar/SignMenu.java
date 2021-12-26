@@ -24,7 +24,7 @@ public class SignMenu extends Menu {
                 new AbstractAction("Set Sign"){ //讓使用者設定名字
                     @Override
                     public void actionPerformed(ActionEvent e) {  
-                        new SetSignFrame();
+                        new SetSignFrame(textEditor);
                     }
                 }
             )

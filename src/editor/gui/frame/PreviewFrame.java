@@ -14,7 +14,7 @@ import editor.TextEditor;
 public class PreviewFrame extends Frame {
 
     public PreviewFrame(TextEditor te) {
-        super("Preview");
+        super("Preview", te);
         
         JEditorPane jEditorPane = new JEditorPane();
         HTMLEditorKit kit = new HTMLEditorKit();

@@ -3,6 +3,7 @@ package editor.gui.frame;
 import javax.swing.*;
 
 import editor.EditorGroup;
+import editor.TextEditor;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -11,8 +12,8 @@ public class SetSignFrame extends Frame {
     
     private JTextField context = new JTextField(EditorGroup.getEditorGroup().getSetting().get("oo.sign"));
 
-    public SetSignFrame() {
-        super("Set Sign");
+    public SetSignFrame(TextEditor textEditor) {
+        super("Set Sign", textEditor);
 
         JScrollPane scrollPane = new JScrollPane(context);
         JButton btn = new JButton(new AbstractAction("Set"){

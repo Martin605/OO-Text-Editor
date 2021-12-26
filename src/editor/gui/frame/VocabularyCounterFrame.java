@@ -14,14 +14,12 @@ import editor.TextEditor;
 public class VocabularyCounterFrame extends Frame {
 
     private JLabel context = new JLabel("");
-    private TextEditor te;
 
     //在此實行Visitor Pattern
     private Visitor teVisitor = new Calculatevocabulary();
 
     public VocabularyCounterFrame(TextEditor te) {
-        super("Vocabulary Counter");
-        this.te = te;
+        super("Vocabulary Counter", te);
 
         this.add(context, BorderLayout.CENTER);
 
@@ -32,7 +30,7 @@ public class VocabularyCounterFrame extends Frame {
     }
 
     public void run_count() {
-        this.set_count(te.accept(teVisitor));
+        this.set_count(this.textEditor.accept(teVisitor));
         //使用TextEditor的accept()，來接受TextEditorVisitor來造訪TextEditor
     }
 

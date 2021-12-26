@@ -1,6 +1,7 @@
 package editor.gui.frame;
 
 import editor.Editor;
+import editor.TextEditor;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -12,8 +13,9 @@ import javax.swing.*;
 public class Frame extends Editor {
 
     private JLabel title;
+    protected TextEditor textEditor;
 
-    Frame(String name) {
+    Frame(String name, TextEditor textEditor) {
         super(name);
 
         // Windows close action
@@ -30,6 +32,7 @@ public class Frame extends Editor {
         this.add(title, BorderLayout.NORTH);
         
         this.setResizable(false);
+        this.textEditor = textEditor;
     }
 
     //Observer Pattern override Editor的方法
