@@ -39,6 +39,8 @@ public class InsertAction implements RecordAction{
 						String EContent = original_content.substring(position, len);//取得插入點後的內容
 						textEditor.getTextArea().setText(OContent+content+EContent);//將所有文字顯示
 						textEditor.getTextArea().setCaretPosition(position+content.length());
+					} else {
+						textEditor.getTextArea().setText(content);
 					}
 				} catch (Exception e) {
 					e.printStackTrace();
