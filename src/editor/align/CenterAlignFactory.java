@@ -13,6 +13,4 @@ public class CenterAlignFactory implements AlignFactory{//實作AlignFactory 對
 		// TODO Auto-generated method stub
 		return new CenterAlign(textEditor); //呼叫置中的Align
 	}
-
-	
 }

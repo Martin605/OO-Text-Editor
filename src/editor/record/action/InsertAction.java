@@ -13,7 +13,6 @@ import editor.TextEditor;
 public class InsertAction implements RecordAction{
 	private JFileChooser fileChooser = new JFileChooser();//選擇檔案的視窗
     private int fileId;
-           
 
 	@Override
 	public void action(TextEditor textEditor) {
@@ -49,10 +48,6 @@ public class InsertAction implements RecordAction{
 	        } catch (IOException e) {
 				e.printStackTrace();
 			}
-	}	
-	    
-	    
-	    
-		
+		}		
 	}
 }
