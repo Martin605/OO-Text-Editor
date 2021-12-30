@@ -66,10 +66,10 @@ public class EditorGroup{
     // Strategy 
     public void changeTheme() {
         //如果theme是空值，也就是沒有任何設定
-        if (theme == null) { 
+//        if (theme == null) { 
             //則預設為第一種樣式
-            theme = new Light(); 
-        }
+ //           theme = new Light(); 
+ //       }
         //將樣式設定進theme
         theme.setTheme(); 
     }
