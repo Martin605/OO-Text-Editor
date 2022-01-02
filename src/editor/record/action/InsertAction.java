@@ -22,8 +22,6 @@ public class InsertAction implements RecordAction{
 
 	@Override
 	public void action(TextEditor textEditor) {
-		
-		
 		String path;
 		String content="";
 		String original_content;
@@ -40,7 +38,7 @@ public class InsertAction implements RecordAction{
 	        		content = new String (Files.readAllBytes( Paths.get(path) ));
 	        	
 	        	}else {
-	        		JOptionPane.showMessageDialog(null, "請選擇.txt", "重新選擇", 
+	        		JOptionPane.showMessageDialog(null, "Please choose .txt", "Rechoose", 
 	        				JOptionPane.ERROR_MESSAGE);
 	        	}	
 								
