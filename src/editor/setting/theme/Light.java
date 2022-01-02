@@ -23,4 +23,4 @@ public class Light implements Theme {
         //來設定整個文字編輯器的背景和字體顏色
 
     } 
-} 
+}

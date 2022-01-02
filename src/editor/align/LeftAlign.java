@@ -26,3 +26,4 @@ public class LeftAlign implements Align{//實作Align 對應ConcreteProduct
 		
 	}
 }
+ 
