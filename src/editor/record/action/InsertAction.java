@@ -1,11 +1,17 @@
 package editor.record.action;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-
+import java.util.ArrayList;
+import javax.swing.filechooser.FileFilter;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.text.BadLocationException;
 
 import editor.TextEditor;
@@ -16,17 +22,28 @@ public class InsertAction implements RecordAction{
 
 	@Override
 	public void action(TextEditor textEditor) {
-		String content;
+		
+		
+		String path;
+		String content="";
 		String original_content;
 		File file;
 		fileChooser.setDialogTitle("Select a file that you want to Insert"); //設定視窗標題
 	    
-	    fileId = fileChooser.showOpenDialog(textEditor);	    
-	    
+	    fileId = fileChooser.showOpenDialog(textEditor);
 	    if (fileId == JFileChooser.APPROVE_OPTION) { 	        
 	        file = fileChooser.getSelectedFile();  
 	        try {
-				content = new String (Files.readAllBytes( Paths.get(file.getAbsolutePath()) ));
+	        	path = file.getAbsolutePath();
+	        	
+	        	if(path.substring(path.length()-3).equals("txt")) {
+	        		content = new String (Files.readAllBytes( Paths.get(path) ));
+	        	
+	        	}else {
+	        		JOptionPane.showMessageDialog(null, "請選擇.txt", "重新選擇", 
+	        				JOptionPane.ERROR_MESSAGE);
+	        	}	
+								
 				original_content = textEditor.getTextArea().getText();
 				//取得內容
 				try {
